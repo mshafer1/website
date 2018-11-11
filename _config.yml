@@ -1,0 +1,16 @@
+destination: _site
+exclude: 
+    - buildSite.bat
+    - publishChanges.bat
+    
+# Site settings
+title: Techit
+description: > # this means to ignore newlines until "baseurl:"  A COMMON GROUND FOR MY MAKER PROJECT UPDATES, PUBLISHING TOOLS, AND SHARING TECH TIPS.
+    A technology blog for helping you find my maker projects, tools, and best practices.
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "https://techit.mandmshafer.com" # the base hostname & protocol for your site
+
+github_username: mshafer1
+
+# Build settings
+markdown: kramdown
