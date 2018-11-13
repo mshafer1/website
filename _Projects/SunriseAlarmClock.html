@@ -1,0 +1,247 @@
+---
+layout: project
+title: Sunrise Alarm Clock
+img: sunriseAlarmFiles/finished.jpg
+---
+
+
+<div>
+    <p>
+        Just as I was looking for a new project to do, my wife asked me what I thought about trying a sunrise alarm clock. I looked at them and talked with her a little bit and decided I could build us something quickly that would suit the basic needs, let us test the idea, and cost less (before you count my time).
+    </p>
+</div>
+
+<div id="Rev1">
+    <h2>Rev 1 Tuning the software:</h2>
+</div>
+
+<div>
+    <p>
+        I started with these things in mind:
+        <ul>
+            <li>It should automatically find the time via wifi or other method</li>
+            <li>It should gradually fade in over 30 minutes (from full off to full on)</li>
+        </ul>
+    </p>
+    <p>
+        I had at my disposal a NodeMCU development board which uses the ESP8266 wifi chip and is Arduino IDE compatible, so I set to work creating an HTTP server to handle our needs.
+    </p>
+    <p>
+        (I’m not going to go into a whole lot of detail on this software rev as I have completely abandoned it, but I will post the code here for the curious).
+    </p>
+
+    <p>
+        Next was the light. After some searching on my usual sources, I selected the 
+        <a href="https://www.jameco.com/webapp/wcs/stores/servlet/ProductDisplay?catalogId=10001&freeText=2115493&langId=-1&storeId=10001&productId=2115493&krypto=6MhzTiB2iEAITdG8ZZCWJuA0SHOVb6TmqoH3eC7dGaBvg6LoUeAHNChwvl5UCkEGjw6txHZPqXBbGDCCs%2FFmKIWre4%2B0m%2Fgk%2FLRtn5bUjmA%3D&ddkey=https%3AStoreCatalogDrillDownView" 
+        target="_blank">LED White T1-3/4</a> at Jameco Electronics
+    </p>
+
+    <p>
+        I knew that running this LED at full brightness was going to require a bit of current draw, and I didn’t want to fry my dev board, so I did some looking to see if I could find an example LED driver that used a transistor for the main current gate (my own previous attempts at this had not worked, and had fried the dev boards). I wanted to use an NPN transistor (like the 2n2222a) to make sure it would be easy to work with (or at least in my mind).
+    </p>
+    <p>
+        The basic layout is to have a control signal from the dev board turn the transistor on and allow current to flow from the LED to ground. Because and LED is almost a short, you have to put a small resistor in series to make sure there is a little bit of a current limiter.
+    </p>
+    <img class="circuit" src="sunriseAlarmFiles/basicCircuit.png"/>
+
+    <p>The problem here is that the control signal will flow through the transistor to the resistor to ground as well. And the effect is the voltage at the gate and at the sync match the control signal and the transistor does not turn on (it needs at least like .7V to turn on, although that varies by transistor). </p>
+
+    <p>
+        On top of that, at 5V, the control signal is outputting 5V / 100 ohms = .05 Amps – which is on the border of what you should pull from an Arduino. I knew I could reduce the current by putting a second resistor in series with the control signal.
+    </p>
+
+    <img class="circuit" src="sunriseAlarmFiles/basicCircuitImproved.png"/>
+    <p>
+        However, this does not solve the problem with not being able to turn on the transistor.
+    </p>
+
+
+    <p>
+        After some Google-ing, I found a post by
+        <a href="http://forum.arduino.cc/index.php?topic=132397.msg995984#msg995984" target="_blank">John_Smith</a> 
+        that uses two diodes in series to solve the voltage level problem (I remembered from school that the drop across a diode tends to be about .7V, so putting two in would lock the input to the transistor at roughtly 1.4V and pull it to ground once the control went low).
+        This solved my issue.
+    </p>
+
+    <iframe width="800" height="600" class="center" src="https://www.multisim.com/content/zoWkatYerktfgGoRc4yVGB/high-current-led-driver-arduino/open">Loading MultiSim Schematic . . .</iframe>
+
+    <p>
+        This solved my control issues. 
+        You’ll notice that I didn’t specify the voltage level or the transistor I used, 
+        I opted to get the LED that I did because it handle a decent current – 30 mA – going through it. 
+        That would allow me to set the input voltage at anything I wanted up to 30V to get the desired brightness 
+        (although I do not expect much of a visible difference beyond about 5 or 6 V).
+    </p>
+
+    <p>
+        With this bread boarded, it was time to code a server.
+    </p>
+
+    <img class="circuit" src="sunriseAlarmFiles/clockBreadBoarded.jpg"/>
+
+    <p>
+        Here, I relied heavily on the 
+        <a href="http://esp8266.github.io/Arduino/versions/2.0.0/doc/installing.html" target="_blank">
+            ESP8266 group's documentation
+        </a>
+        for getting my Arduino IDE setup and going.
+    </p>
+
+    <p>
+        Couple of things I did in the code:
+        <ul>
+            <li>I depended on a local server I had to host a page that printed the current time stamp which I had the alarm grab on boot to figure out what time it was.</li>
+            <li>I also had that server providing the html, css, and javascript to make a nice UI, and forwarding all the requests for current and changes to the configuration in the form of GET requests to the NodeMCU. This minimized the amount of data I was storing on the NodeMCU for the web page.</li>
+            <li>I had the program check what brightness it should set the light at based on the current time and the time of the current alarm (if alarms were on), then check if there were any HTTP requests (handle them if so) but continue if not. This allowed for the web server to not interfere with setting the brightness, but I could also pull up the web page on my phone and tweak it whenever I wanted.</li>
+        </ul>
+    </p>
+
+    <p>
+        <iframe class="code" height="500px;" src="sunriseAlarmFiles/firstCode.html">Loading . . .</iframe>
+    </p>
+
+    <p>
+        This worked pretty well for us, but we eventually decided that week-day and week-end with the whole thing being on or off wasn’t enough control (in particular, we wanted to have it off on Saturdays without having to remember to turn it back on for Sunday).
+    </p>
+
+    <div id="Rev2">
+        <h2>Rev 2 Cleaning up the Hardware:</h2>
+    </div>
+
+    <p>
+        After we had been using this alarm for a couple of weeks, 
+        we were pretty sure we liked it and that I should proceed to making it a little more permanent. 
+        <br/>
+        So, I took the schematic for the driver and used MultiSim/Ultiboard desktop (which I have access to through my day job) and designed a PCB. 
+        I ordered off to <a href="https://oshpark.com/shared_projects/x42wQTAC" target="_blank">Osh Park</a> and had a couple made.
+        <br/>
+        I soldered one up, and that was the install that went into place in our new apartment (there was a move in there that caused a delay in getting things done).
+    </p>
+
+    <img src="sunriseAlarmFiles/pcbFirstPass.jpg" class="code"/>
+
+    <p>
+        Around this time, we started having issues with my Wi-Fi router 
+        (hey, I bought it from Goodwill and it was two years old, so . . . yeah this was coming at some point). 
+        <br/>
+        When we got that all sorted (the first replacement we got didn’t work), 
+        I had a lot of trouble getting the NodeMCU to connect to the new router. 
+        <br/>
+        I did find that after letting it sit for about a week, it connected right up, but that’s not really a workable solution 
+        (I’m not sure what the problem is, if it’s related to IP reservations which I have set to a 24hr period, or what). 
+        <br/>
+        On top of that, I had never been able to get the hostname to set correctly and the new router didn’t want to assign it the reserved IP I wanted it to, 
+        so I was having to update my server relay code every time I fought the connectivity again. 
+        <br/>
+        Eventually I had had enough and decided to order a Raspberry Pi 0 to run my circuit board.
+    </p>
+
+    <div id="Rev3">
+        <h2>Rev 3 Lowering the driver current:</h2>
+    </div>
+
+    <p>
+        Now, the original circuit design would pull about 30 mA, which is 
+        <a target="_blank" href="https://www.element14.com/community/thread/20982/l/raspberry-pi-gpio-pin-max-current?displayFullThread=true">
+            too high for the RasPi-0 gpio pins
+        </a>; so, it was time to rev the hardware again.
+    </p>
+
+    <p>
+            I decided to increase the input resistor to 1k and wee what that did. That dropped the expected current down to 3mA, which is a sufficient drop in current.
+    </p>
+
+    <p>Conveniently, this meant I could re-use the same boards I had made earlier and just swap one of the resistors for a higher value.</p>
+
+    <iframe class="center" width="800" height="600" src="https://www.multisim.com/content/hGu5osguW4YqiW9e4sXkK8/high-current-led-driver/open"></iframe>
+
+    <div id="Rev4">
+        <h2>Rev 4 Translating code to Python: - November 2018</h2>
+    </div>
+
+    <p>
+        You may have realized earlier that the NodeMCU runs Arduino C, 
+        and the RasPi runs Python (or at least that’s the most pushed programming language for it. 
+        Since it’s a Linux machine, it can run compiled C code). 
+        I set to work translating the concept of the web server and configuration to Python.
+    </p>
+    <p>
+        Couple of things I wanted to take advantage of:
+        <ul>
+            <li>The system time – rather then depending on another server for the time</li>
+            <li>
+                <a target="_blank" href="https://pypi.org/project/tinydb/">TinyDB</a>
+                 – to store and reload the configuration easily
+            </li>
+            <li>
+                The RasPI-0’s speed and run the whole web server and LED control in one place
+            </li>
+            <li>
+                Unit testing! 
+                – this was something that was sorely lacking in the Arduino environment 
+                (I’m not saying it’s impossible, just non-intuitive), 
+                if you look at the source for the this version of the project, 
+                you’ll see that I have a decent number of unit tests around the concept of an alarm, what days it should be active, 
+                and even around the alarm composite I wrote and the database being able to store and reload the config.
+            </li>
+        </ul>
+    </p>
+
+    <p>
+        One last thing I had to take care of, piping 5V through the RasPi was not working, so I soldered a barrel jack to provide Vin to my LED Driver, with a ground tied to the RasPi.
+    </p>
+
+    <img class="code" src="sunriseAlarmFiles/finished.jpg"/>
+
+    <p>
+        Due to the fact that we decided we liked this, I opted to shorten my time to market by delivering the absolute bare minimum needed to make it work.
+        <br/>
+        There is no web interface on this version (although I did create an HTTP server to set it up), and the command line interface (CLI) is extremely limited.
+        <br/>
+        To use it, one must:
+        <ol>
+            <li>install the dependencies,</li>
+            <li>run the CLI</li>
+            <li>add the desired number of alarms</li>
+            <li>quit the application</li>
+            <li>open the alarms.json file in a text editor</li>
+            <li>set the desired times and days (referencing how the flags work) for each alarm,</li>
+            <li>restart the CLI and let it run.</li>
+        </ol> 
+        Obviously this is far from ideal, but it got the our alarm clock up and running again about a week sooner than it would have been if I had pressed for either a more complete CLI or web interface.
+    </p>
+
+    <div id="Where">
+        <h2>Where to get it:</h2>
+    </div>
+    <p>
+        You'll find the current source for this project on
+        <a target="_blank" href="https://github.com/mshafer1/SunRiseAlarm">
+            GitHub
+        </a>
+    </p>
+
+    <p>
+        And here's where you can download my Gerber files (or order the board) on
+        <a target="_blank" href="https://oshpark.com/shared_projects/x42wQTAC">
+            Osh Park
+        </a>
+    </p>
+
+    <p>I hope you find this useful.</p>
+
+
+    <div id="Future">
+        <h2>Some Future Improvements:</h2>
+    </div>
+    <p>
+        <ul>
+            <li>Fixing the setup.py so it works correctly to install the minimum version of dependencies</li>
+            <li>Actually adding a web interface.</li>
+            <li>Setting up for the script to run as a service in the background</li>
+            <li>Automating the setup to one script</li>
+        </ul>
+    </p>
+
+    <!-- <p>Built it? Le me know in the comments!</p> -->
+</div>

@@ -1,0 +1,28 @@
+.blog-main {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+h1, h2 {
+    color: #F05F40;
+}
+
+h2 {
+    margin-top: 50px;
+    font-size: 24pt;
+}
+
+p {
+    font-size: 16pt;
+}
+
+.code {
+    width: 90%;
+    padding-left: 50px;
+    padding-right: 50px;
+    max-height: 100%;
+}
+
+.padded {
+    padding: 20px;
+}
