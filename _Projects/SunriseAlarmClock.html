@@ -37,24 +37,39 @@ img: sunriseAlarmFiles/finished.jpg
     </p>
 
     <p>
-        I knew that running this LED at full brightness was going to require a bit of current draw, and I didn’t want to fry my dev board, so I did some looking to see if I could find an example LED driver that used a transistor for the main current gate (my own previous attempts at this had not worked, and had fried the dev boards). I wanted to use an NPN transistor (like the 2n2222a) to make sure it would be easy to work with (or at least in my mind).
+        I knew that running this LED at full brightness was going to require a bit of current draw, 
+        and I didn’t want to fry my dev board, 
+        so I did some looking to see if I could find an example LED driver that used a transistor for the main current gate 
+        (my own previous attempts to design this from scratch had not worked, and had fried the dev boards). 
+        
+        I wanted to use an NPN transistor (like the 2n2222a) to make sure it would be easy to work with (or at least in my mind).
     </p>
+
+
     <p>
-        The basic layout is to have a control signal from the dev board turn the transistor on and allow current to flow from the LED to ground. Because and LED is almost a short, you have to put a small resistor in series to make sure there is a little bit of a current limiter.
+        The basic layout is to have a control signal from the dev board turn the transistor on and allow current to flow from the LED to ground.
+        <br/> 
+        Because and LED is almost a short, you have to put a small resistor in series to make sure there is a little bit of a current limiter.
     </p>
     <img class="circuit" src="sunriseAlarmFiles/basicCircuit.png"/>
 
-    <p>The problem here is that the control signal will flow through the transistor to the resistor to ground as well. And the effect is the voltage at the gate and at the sync match the control signal and the transistor does not turn on (it needs at least like .7V to turn on, although that varies by transistor). </p>
+    <p>The problem here is that the control signal will flow through the transistor to the resistor to ground as well. 
+       <br/>
+        And the effect is the voltage at the gate and at the sync match the control signal and the transistor does not turn on 
+        (it needs at least like .7V to turn on, although that varies by transistor). 
+    </p>
 
     <p>
-        On top of that, at 5V, the control signal is outputting 5V / 100 ohms = .05 Amps – which is on the border of what you should pull from an Arduino. I knew I could reduce the current by putting a second resistor in series with the control signal.
+        On top of that, at 5V, the control signal is outputting 5V / 100 ohms = .05 Amps
+         – which is on the border of what you should pull from an Arduino. 
+         <br/>
+         I knew I could reduce the current by putting a second resistor in series with the control signal.
     </p>
 
     <img class="circuit" src="sunriseAlarmFiles/basicCircuitImproved.png"/>
     <p>
         However, this does not solve the problem with not being able to turn on the transistor.
     </p>
-
 
     <p>
         After some Google-ing, I found a post by
@@ -63,7 +78,7 @@ img: sunriseAlarmFiles/finished.jpg
         This solved my issue.
     </p>
 
-    <iframe width="800" height="600" class="center" src="https://www.multisim.com/content/zoWkatYerktfgGoRc4yVGB/high-current-led-driver-arduino/open">Loading MultiSim Schematic . . .</iframe>
+    <iframe width="800" height="600" class="center sized" src="https://www.multisim.com/content/zoWkatYerktfgGoRc4yVGB/high-current-led-driver-arduino/open">Loading MultiSim Schematic . . .</iframe>
 
     <p>
         This solved my control issues. 
@@ -74,7 +89,7 @@ img: sunriseAlarmFiles/finished.jpg
     </p>
 
     <p>
-        With this bread boarded, it was time to code a server.
+        With this bread-boarded, it was time to code a server.
     </p>
 
     <img class="circuit" src="sunriseAlarmFiles/clockBreadBoarded.jpg"/>
@@ -96,8 +111,9 @@ img: sunriseAlarmFiles/finished.jpg
         </ul>
     </p>
 
+
     <p>
-        <iframe class="code" height="500px;" src="sunriseAlarmFiles/firstCode.html">Loading . . .</iframe>
+        <iframe class="center sized" height="500px;" src="sunriseAlarmFiles/firstCode.html">Loading . . .</iframe>
     </p>
 
     <p>
@@ -153,7 +169,7 @@ img: sunriseAlarmFiles/finished.jpg
 
     <p>Conveniently, this meant I could re-use the same boards I had made earlier and just swap one of the resistors for a higher value.</p>
 
-    <iframe class="center" width="800" height="600" src="https://www.multisim.com/content/hGu5osguW4YqiW9e4sXkK8/high-current-led-driver/open"></iframe>
+    <iframe class="center sized" width="800" height="600" src="https://www.multisim.com/content/hGu5osguW4YqiW9e4sXkK8/high-current-led-driver/open"></iframe>
 
     <div id="Rev4">
         <h2>Rev 4 Translating code to Python: - November 2018</h2>
@@ -225,8 +241,16 @@ img: sunriseAlarmFiles/finished.jpg
         And here's where you can download my Gerber files (or order the board) on
         <a target="_blank" href="https://oshpark.com/shared_projects/x42wQTAC">
             Osh Park
-        </a>
+        </a>.
     </p>
+
+
+    <p>
+        I realized after the fact that I should have used the silk screen to label the Vin, Control, Ground pins as well as the Collector, Emmitter, and Gate pins on the transistor.
+    </p>
+    <div class="bg-white">
+        <img src="sunriseAlarmFiles/labeledPCB.png" class="code"/>
+    </div>
 
     <p>I hope you find this useful.</p>
 

@@ -26,3 +26,7 @@ p {
 .padded {
     padding: 20px;
 }
+
+.sized {
+    max-width: 100%;
+}
