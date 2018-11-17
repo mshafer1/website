@@ -15,6 +15,8 @@ github_username: mshafer1
 collections:
   Projects:
     output: true
+  Blog:
+    output: true
 
 # Build settings
 markdown: kramdown

@@ -8,17 +8,19 @@
         </div>
     </div>
     <div class="container">
-        {% for post in site.posts limit:5 %}
+        {% for post in site.Blog limit:5 %}
             {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
             {% if thecycle == 'odd' %}
                 <div class="row">
             {% endif %}
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="service-box">
-                        <h3>{{post.title}}</h3>
-                        <p class="text-muted">{{post.summary}}</p>
+                <a href="{{post.url}}">
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="service-box">
+                            <h3>{{post.title}}</h3>
+                            <p class="text-muted">{{post.summary}}</p>
+                        </div>
                     </div>
-                </div>
+                </a>
             {% if thecycle == 'odd' %}
                 </div>
             {% endif %}
