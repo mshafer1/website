@@ -23,24 +23,40 @@ p {
     max-height: 100%;
 }
 
+.code-preview {
+    height: 20em;
+    overflow: hidden;
+}
+
 .padded {
     padding: 20px;
 }
 
 .sized {
     max-width: 100%;
+    display: inline-block;
+}
+
+.wrapper {
+    position: relative;
+}
+
+.bottom {
+    position: fixed;
+    bottom: 0px;
 }
 
 img.circuit {
     max-width: 50%;
-    display: block;
+    display: inline-block;
     margin-left: auto;
     margin-right: auto;
     width: 50%;
 }
 
 .padded .reset {
-    padding: 0px!important;
+    padding-left: 0px!important;
+    padding-right: 0px!important;
 }
 
 .center .reset {
@@ -55,7 +71,10 @@ img.circuit {
         width: 100%;
         padding-left: 5px;
         padding-right: 5px;
-        max-height: 800px;
+    }
+
+    .code-preview {
+        max-height: 5em;
     }
 
     .padded {
@@ -64,7 +83,7 @@ img.circuit {
 
     img.circuit {
         max-width: 100%;
-        display: block;
+        display: inline-block;
         margin-left: auto;
         margin-right: auto;
         height: auto;

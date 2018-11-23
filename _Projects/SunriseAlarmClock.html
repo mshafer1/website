@@ -109,14 +109,19 @@ tags: Raspberry-Pi-0 Python Circuits Maker
         <li>I had the program check what brightness it should set the light at based on the current time and the time of the current alarm (if alarms were on), then check if there were any HTTP requests (handle them if so) but continue if not. This allowed for the web server to not interfere with setting the brightness, but I could also pull up the web page on my phone and tweak it whenever I wanted.</li>
     </ul>
 </p>
-
-
-    <!-- <iframe class="center sized code" height="500px;" src="sunriseAlarmFiles/firstCode.html">Loading . . .</iframe> -->
-    <div class="code center sized code-preview" style="height: 20em; overflow: hidden;">
-        {% include_relative sunriseAlarmFiles/firstCode.html %}
-        <div class="bg-light-gray" style="float: none; display: table-cell; vertical-align: bottom;">
-            <button onclick="expand();">Click to see more . . .</button>
+    <div class="code center sized ">
+        <div class="code-preview" id="FirstCode">
+                {% include_relative sunriseAlarmFiles/firstCode.html %}
         </div>
+
+        <footer style="background-color: darkgray; color: white; cursor: pointer;">          
+                <span id="BtnFirstCode">Click to see more . . .</span>
+                <script>
+                    $('#BtnFirstCode').click(function() {
+                        expand('FirstCode', 'FirstCode');
+                    })
+                </script>
+        </footer>
     </div>
 <p>
     This worked pretty well for us, but we eventually decided that week-day and week-end with the whole thing being on or off wasn’t enough control (in particular, we wanted to have it off on Saturdays without having to remember to turn it back on for Sunday).
