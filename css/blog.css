@@ -34,7 +34,7 @@ p {
 
 .sized {
     max-width: 100%;
-    display: inline-block;
+    display: block;
 }
 
 .wrapper {
@@ -48,7 +48,7 @@ p {
 
 img.circuit {
     max-width: 50%;
-    display: inline-block;
+    display: block;
     margin-left: auto;
     margin-right: auto;
     width: 50%;

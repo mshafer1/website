@@ -2,10 +2,10 @@
 <script src="/css/highlight/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 <div class="reset">
-<pre><code id="codeTarget" class="arduino">
- 
-</code></pre>
-
+<pre>
+<code id="codeTarget" class="arduino">
+</code>
+</pre>
 <script>
 
 var target = document.getElementById("codeTarget");
@@ -77,7 +77,8 @@ void setup() {
   USE_SERIAL.println();
 
   for (uint8_t t = 4; t > 0; --t) {
-    USE_SERIAL.printf("[SETUP] WAIT %d...\n", t);
+    USE_SERIAL.printf("[SETUP] WAIT %d...", t);
+    USE_SERIAL.println();
     delay(1000);
   }
 
@@ -111,7 +112,7 @@ void loop()
     {
       HTTPClient http;
 
-      USE_SERIAL.print("[HTTP] begin...\n");
+      USE_SERIAL.println("[HTTP] begin...");
       // configure traged server and url
       //http.begin("https://192.168.1.50/test.html", "7a 9c f4 db 40 d3 62 5a 6e 21 bc 5c cc 66 c8 3e a1 45 59 38"); //HTTPS
       digitalWrite(LED_BUILTIN, LOW);
@@ -125,7 +126,8 @@ void loop()
       if (httpCode > 0)
       {
         // HTTP header has been send and Server response header has been handled
-        USE_SERIAL.printf(" code: %d\n", httpCode);
+        USE_SERIAL.printf(" code: %d", httpCode);
+        USE_SERIAL.println();
 
         // file found at server
         if (httpCode == HTTP_CODE_OK)
@@ -160,7 +162,8 @@ void loop()
       }
       else
       {
-        USE_SERIAL.printf(" failed, error: %s\n", http.errorToString(httpCode).c_str());
+        USE_SERIAL.printf(" failed, error: %s", http.errorToString(httpCode).c_str());
+        USE_SERIAL.println();
         resetFunc(); //call reset
       }
     }

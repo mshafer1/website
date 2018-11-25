@@ -24,5 +24,5 @@ function collapse(id, scrollId) {
 function scrollToId(id) {
     $('html, body').animate({
         scrollTop: $('#' + id).offset().top - 50,
-      }, 1000)
+      }, 500)
 }
