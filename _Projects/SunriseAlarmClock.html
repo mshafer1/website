@@ -77,7 +77,8 @@ tags: Raspberry-Pi-0 Python Circuits Maker
     This solved my issue.
 </p>
 
-<iframe width="800" height="600" class="center sized" src="https://www.multisim.com/content/zoWkatYerktfgGoRc4yVGB/high-current-led-driver-arduino/open">Loading MultiSim Schematic . . .</iframe>
+{% assign url="https://www.multisim.com/content/zoWkatYerktfgGoRc4yVGB/high-current-led-driver-arduino/open" %}
+{% include circuitPreview.html %}
 
 <p>
     This solved my control issues. 
@@ -109,20 +110,20 @@ tags: Raspberry-Pi-0 Python Circuits Maker
         <li>I had the program check what brightness it should set the light at based on the current time and the time of the current alarm (if alarms were on), then check if there were any HTTP requests (handle them if so) but continue if not. This allowed for the web server to not interfere with setting the brightness, but I could also pull up the web page on my phone and tweak it whenever I wanted.</li>
     </ul>
 </p>
-    <div class="code center sized ">
-        <div class="code-preview" id="FirstCode">
-                {% include_relative sunriseAlarmFiles/firstCode.html %}
-        </div>
-
-        <footer style="background-color: darkgray; color: white; cursor: pointer;">          
-                <span id="BtnFirstCode">Click to see more . . .</span>
-                <script>
-                    $('#BtnFirstCode').click(function() {
-                        expand('FirstCode', 'FirstCode');
-                    })
-                </script>
-        </footer>
+<div class="code center sized ">
+    <div class="code-preview" id="FirstCode">
+            {% include_relative sunriseAlarmFiles/firstCode.html %}
     </div>
+
+    <footer style="background-color: darkgray; color: white; cursor: pointer;">          
+            <span id="BtnFirstCode">Click to see more . . .</span>
+            <script>
+                $('#BtnFirstCode').click(function() {
+                    expand('FirstCode', 'FirstCode');
+                })
+            </script>
+    </footer>
+</div>
 <p>
     This worked pretty well for us, but we eventually decided that week-day and week-end with the whole thing being on or off wasn’t enough control (in particular, we wanted to have it off on Saturdays without having to remember to turn it back on for Sunday).
 </p>
@@ -163,22 +164,25 @@ tags: Raspberry-Pi-0 Python Circuits Maker
     <h2>Rev 3 Lowering the driver current:</h2>
 
 
-<p>
-    Now, the original circuit design would pull about 30 mA, which is 
-    <a target="_blank" href="https://www.element14.com/community/thread/20982/l/raspberry-pi-gpio-pin-max-current?displayFullThread=true">
-        too high for the RasPi-0 gpio pins
-    </a>; 
-    so, it was time to rev the hardware again.
-</p>
+    <p>
+        Now, the original circuit design would pull about 30 mA, which is 
+        <a target="_blank" href="https://www.element14.com/community/thread/20982/l/raspberry-pi-gpio-pin-max-current?displayFullThread=true">
+            too high for the RasPi-0 gpio pins
+        </a>; 
+        so, it was time to rev the hardware again.
+    </p>
 
-<p>
-        I decided to increase the input resistor to 1k and see what that did. That dropped the expected current down to 3mA, which is sufficiently low.
-</p>
+    <p>
+            I decided to increase the input resistor to 1k and see what that did. That dropped the expected current down to 3mA, which is sufficiently low.
+    </p>
 
-<p>Conveniently, this meant I could re-use the same boards I had made earlier and just swap one of the resistors for a higher value.</p>
+    <p>Conveniently, this meant I could re-use the same boards I had made earlier and just swap one of the resistors for a higher value.</p>
+    
+    {% assign url="https://www.multisim.com/content/hGu5osguW4YqiW9e4sXkK8/high-current-led-driver/open" %}
+    {% include circuitPreview.html %}
 
-<iframe class="center sized" width="800" height="600" src="https://www.multisim.com/content/hGu5osguW4YqiW9e4sXkK8/high-current-led-driver/open"></iframe>
 </div>
+
 <div id="Rev4">
     <h2>Rev 4 Translating code to Python: - November 2018</h2>
 
