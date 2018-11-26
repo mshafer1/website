@@ -26,7 +26,7 @@ But what if your thumb drive is lost or inaccessible? Suppose your laptop crashe
 
 One of the best solutions to this is to also use an online backup like Google Drive, OneDrive, DropBox, or even Apple Cloud or similar service. The chances of you being in a situation where your original files are gone, you can’t get to your thumb drive, and you can’t access the internet are pretty small.
 
-You might say that you would just use the internet backup, and that is fine as long as any time you need to access it you have internet available (and can sign in), but there’s always the possibility of your account being hacked and your files deleted (despite the efforts that online backup  companies put in to making sure your account doesn’t get hacked, ultimately the only one responsible to make sure your files are preserved is you). In any of these scenarios, if you had your thumb drive, you’d be fine.
+You might say that you would just use the internet backup, and that is fine as long as any time you need to access it you have internet available, but there’s always the possibility of your account being hacked and your files deleted (despite the efforts that online backup  companies put in to making sure your account doesn’t get hacked, ultimately the only one responsible to make sure your files are preserved is you). In any of these scenarios, if you had your thumb drive, you’d be fine.
 
 
 On the other hand, what if you forgot to take your thumb drive out of your pocket so it went through the wash, your internet is down, and your computer is not loading the latest version of the file? I recognize that the probability of this is fairly low, but you can still safeguard yourself against this by having more backups.
