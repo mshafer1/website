@@ -16,6 +16,14 @@ p {
     font-size: 16pt;
 }
 
+.screenshot {
+    max-width: 90%;
+    padding-left: 50px;
+    padding-right: 50px;
+    max-height: 100%;
+    display: block;
+}
+
 .code {
     width: 90%;
     padding-left: 50px;
