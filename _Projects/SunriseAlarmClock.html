@@ -186,58 +186,75 @@ tags: Raspberry-Pi-0 Python Circuits Maker
 <div id="Rev4">
     <h2>Rev 4 Translating code to Python: - November 2018</h2>
 
+    <p>
+        You may have realized earlier that the NodeMCU runs Arduino C, 
+        and the RasPi runs Python (or at least that’s the most pushed programming language for it. 
+        Since it’s a Linux machine, it can run compiled C code). 
+        I set to work translating the concept of the web server and configuration to Python.
+    </p>
+    <p>
+        Couple of things I wanted to take advantage of:
+        <ul>
+            <li>The system time – rather then depending on another server for the time</li>
+            <li>
+                <a target="_blank" href="https://pypi.org/project/tinydb/">TinyDB</a>
+                    – to store and reload the configuration easily
+            </li>
+            <li>
+                The RasPI-0’s speed and run the whole web server and LED control in one place
+            </li>
+            <li>
+                Unit testing! 
+                – this was something that was sorely lacking in the Arduino environment 
+                (I’m not saying it’s impossible, just non-intuitive), 
+                if you look at the source for the this version of the project, 
+                you’ll see that I have a decent number of unit tests around the concept of an alarm, what days it should be active, 
+                and even around the alarm composite I wrote and the database being able to store and reload the config.
+            </li>
+        </ul>
+    </p>
 
-<p>
-    You may have realized earlier that the NodeMCU runs Arduino C, 
-    and the RasPi runs Python (or at least that’s the most pushed programming language for it. 
-    Since it’s a Linux machine, it can run compiled C code). 
-    I set to work translating the concept of the web server and configuration to Python.
-</p>
-<p>
-    Couple of things I wanted to take advantage of:
-    <ul>
-        <li>The system time – rather then depending on another server for the time</li>
-        <li>
-            <a target="_blank" href="https://pypi.org/project/tinydb/">TinyDB</a>
-                – to store and reload the configuration easily
-        </li>
-        <li>
-            The RasPI-0’s speed and run the whole web server and LED control in one place
-        </li>
-        <li>
-            Unit testing! 
-            – this was something that was sorely lacking in the Arduino environment 
-            (I’m not saying it’s impossible, just non-intuitive), 
-            if you look at the source for the this version of the project, 
-            you’ll see that I have a decent number of unit tests around the concept of an alarm, what days it should be active, 
-            and even around the alarm composite I wrote and the database being able to store and reload the config.
-        </li>
-    </ul>
-</p>
+    <p>
+        One last thing I had to take care of, piping 5V through the RasPi was not working, so I soldered a barrel jack to provide Vin to my LED Driver, with a ground tied to the RasPi.
+    </p>
 
-<p>
-    One last thing I had to take care of, piping 5V through the RasPi was not working, so I soldered a barrel jack to provide Vin to my LED Driver, with a ground tied to the RasPi.
-</p>
+    <img class="circuit" src="sunriseAlarmFiles/finished.jpg"/>
 
-<img class="circuit" src="sunriseAlarmFiles/finished.jpg"/>
+    <p>
+        Due to the fact that we decided we liked this, I opted to shorten my time to market by delivering the absolute bare minimum needed to make it work.
+        <br/>
+        There is no web interface on this version (although I did create an HTTP server to set it up), and the command line interface (CLI) is extremely limited.
+        <br/>
+        To use it, one must:
+        <ol>
+            <li>install the dependencies,</li>
+            <li>run the CLI</li>
+            <li>add the desired number of alarms</li>
+            <li>quit the application</li>
+            <li>open the alarms.json file in a text editor</li>
+            <li>set the desired times and days (referencing how the flags work) for each alarm,</li>
+            <li>restart the CLI and let it run.</li>
+        </ol> 
+        Obviously this is far from ideal, but it got our alarm clock up and running again about a week sooner than it would have been if I had pressed for either a more complete CLI or web interface.
+    </p>
+</div>
 
-<p>
-    Due to the fact that we decided we liked this, I opted to shorten my time to market by delivering the absolute bare minimum needed to make it work.
-    <br/>
-    There is no web interface on this version (although I did create an HTTP server to set it up), and the command line interface (CLI) is extremely limited.
-    <br/>
-    To use it, one must:
-    <ol>
-        <li>install the dependencies,</li>
-        <li>run the CLI</li>
-        <li>add the desired number of alarms</li>
-        <li>quit the application</li>
-        <li>open the alarms.json file in a text editor</li>
-        <li>set the desired times and days (referencing how the flags work) for each alarm,</li>
-        <li>restart the CLI and let it run.</li>
-    </ol> 
-    Obviously this is far from ideal, but it got our alarm clock up and running again about a week sooner than it would have been if I had pressed for either a more complete CLI or web interface.
-</p>
+<div id="Rev5">
+    <h2>Rev 5 Fixing a few issues: - December 2018</h2>
+
+    <p>When I initially soldered the barrel jack, I apparently had a bad connection, this was troublesome.</p>
+
+    <p>Also, the LED appeared to flash a little (when it did work despite the barell jack). In particular, it would get overly bright then resume the correct brightness on most steps (which are set to once per second).</p>
+
+    <p>After some searching the forums, I came across 
+        <a href="https://www.raspberrypi.org/forums/viewtopic.php?t=115513" target="_blank">this thread</a> 
+        that stated that one needs to use pigpio (or similar) and gives an example.</p>
+    
+    <p>Turns out that gpiozero is a software timed PWM (which is fine for servos and the like that can't physically respond to one pulse being different than the rest, but is visible on an LED).</p>
+
+    <p>I used the example to test if this did resolve the issue, and (becuase it does) I have now upgraded the software (and corresponding tests) to use pigpio instead.</p>
+
+    <p>Also moved all the unit tests under the  UnitTest folder and made a master run file.</p>
 </div>
 
 <div id="Where">
