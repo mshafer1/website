@@ -17,7 +17,7 @@ The basic concept is to use a `WinWaitActive` followed `WinWaitNotActive` with a
 <script>hljs.initHighlightingOnLoad();</script>
 <div>
 <pre>
-<code class="AHK">
+<code class="autohotkey">
 WinWaitActive, YouTube
 WinWaitNotActive, YouTube,, 600 ; 10 min in seconds
 </code>
