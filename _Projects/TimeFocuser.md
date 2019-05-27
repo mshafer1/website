@@ -11,7 +11,7 @@ I have found at times in my life that I spend way too much time on YouTube or re
 
 I chose to write a script using [AutoHotkey](http://www.autohotkey.com){:target="_blank"} to help me keep better track of my time.
 
-The basic concept is to use a `WinWaitActive` followed `WinWaitNotActive` with a timeout to start a timer when I open the page, but let the script continue once I've spent long enough on the page.
+The basic concept is to use a `WinWaitActive` followed by a `WinWaitNotActive` with a timeout to start a timer when I open the page, but let the script continue once I've spent long enough on the page.
 <link rel="stylesheet" href="/css/highlight/styles/darcula.css">
 <script src="/css/highlight/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
@@ -37,7 +37,7 @@ if ErrorLevel
 </pre>
 </div>
 
-To keep it running, I added an infinite loop around these three lines, and changed to using the [Group concept in AHK](https://autohotkey.com/docs/commands/GroupAdd.htm){:target="_blank"} so that I could specify multiple flavors of the windows I wanted to keep a tab on time while open (I eventually added Netflix to this list as well). Finally, I made a variable for the time to wait before showing an alert and put it at the top for easy edit, added some comments, and utilized [FanaticGuru's Centered_MsgBox (renamed)](https://www.autohotkey.com/boards/viewtopic.php?p=42603&sid=15ab5b2d8380033e6295f2cf772adae7#p42603){:target="_blank"} to have it show up on top of the time waisting window.
+To keep it running, I added an infinite loop around these three lines; changed to using the [Group concept in AHK](https://autohotkey.com/docs/commands/GroupAdd.htm){:target="_blank"} so that I could specify multiple flavors of the windows I wanted to keep a tab on time while open (I eventually added Netflix to this list as well); made a variable for the time to wait before showing an alert and put it at the top for easy edit; added some comments; and, finally, utilized [FanaticGuru's Centered_MsgBox (renamed)](https://www.autohotkey.com/boards/viewtopic.php?p=42603&sid=15ab5b2d8380033e6295f2cf772adae7#p42603){:target="_blank"} to have it show up on top of the time waisting window.
 
 ## Full code
 
