@@ -25,6 +25,7 @@ WinWaitNotActive, YouTube,, 600 ; 10 min in seconds
 </div>
 
 Then, if the timeout on the WaitNotActive occured, I want to show an alert (if we proceed past that point without a timeout, that means I've changed the active window and must not be vegging). To make it system modal, we use the [options parameter](https://autohotkey.com/docs/commands/MsgBox.htm#Group_4_Modality){:target="_blank"} and set it to 4096
+
 <div>
 <pre>
 <code class="autohotkey">
@@ -40,7 +41,7 @@ To keep it running, I added an infinite loop around these three lines, and chang
 
 ## Full code
 
-(you will need to install Autohotkey to run this code - it is possible to distribute compiled versions, but a: you shouldn't trust them and b: gh-pages would complain at me for hosting binary files)
+(you will need to install Autohotkey to run this code - it is possible to distribute compiled versions, but (a) you shouldn't trust them and (b) gh-pages would complain at me for hosting binary files)
 
 <div>
 <pre>
