@@ -2,7 +2,7 @@
 layout: project
 title: Time Focuser
 img: timeFocuserFiles/appointment-new.svg # from https://www.1001freedownloads.com/free-clipart/tango-appointment-new
-# category: Raspberry Pi 0 + Python
+category: AHK
 tags: Raspberry-Pi-0 Python Circuits Maker
 ---
 
