@@ -371,3 +371,9 @@ body {
     top: 10;
     padding: 50px;
 }
+
+@media print {
+    .printHide {
+            display: none!important;
+    }
+}
