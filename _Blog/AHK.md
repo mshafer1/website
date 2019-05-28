@@ -182,5 +182,14 @@ For more examples of great ideas to automate using AHK, check out these other ar
 * [Make Use Of: 10+ Cool AutoHotkey Scripts & How to Make Your Own](https://www.makeuseof.com/tag/10-cool-autohotkey-scripts-make/){:target="_blank"}
 
 <br/><br/>
+
+## Some Final Notes:
+* If you have [AHK](http://autohotkey.com){:target="_blank"} installed, you can run the scripts by opening them (you can also compile them to make them portable if you desire)
+* I have found it useful to put my main script (with my set of hotkeys/strings I use often) in my [Windows startup folder](https://www.howtogeek.com/228467/how-to-make-a-program-run-at-startup-on-any-computer/){:target="_blank"}
+* Even though we wrote seperate scripts in the examples above, it is fine to write one main script
+
+
+
+<br/><br/>
 ## Call for comments
 On this article in particular, I'm interested in hearing what scripts/macros you've found to be useful and are willing to share.
