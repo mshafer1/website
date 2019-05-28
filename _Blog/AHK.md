@@ -12,7 +12,7 @@ AutoHotkey ([AHK](http://autohotkey.com){:target="_blank"}) is a powerful script
 
 ## Background
 
-I was first introduced to [AHK](http://autohotkey.com){:target="_blank"}) by a coworker [John](https://github.com/thesloopjohnb){:target="_blank"} in the summer of 2014. I had been on the search for a way to store lines of text I had to type frequently that was better than a text file and copy/paste. That summer, I acquired a barcode scanner for a project, but also experimented with using it for this as well (I printed off a sheet of bar codes containing lines of code I kept needing to add to the work I was doing). John mentioned AHK to me, and I tried it out. 
+I was first introduced to [AHK](http://autohotkey.com){:target="_blank"} by a coworker ([John](https://github.com/thesloopjohnb){:target="_blank"}) in the summer of 2014. I had been on the search for a way to store lines of text I had to type frequently that was better than a text file and copy/paste. That summer, I acquired a barcode scanner for a project, but also experimented with using it for this as well (I printed off a sheet of bar codes containing lines of code I kept needing to add to the work I was doing). John mentioned AHK to me, and I tried it out. 
 
 I use it all the time now, with some shortcut scripts setup to run on startup, and the occasional "I need to do this thing real quick" when Python isn't the best option (For example, see my [Time Focuser](/projects/TimeFocuser.html) article).
 
