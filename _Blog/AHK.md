@@ -124,8 +124,8 @@ Ever encounter a document or website where you wish your mouse scrolled a lot fa
   <br/>
   ![change the option to Hotstring](ahkOverviewFiles/selectSend.png)
   <br/><br/>
-* Enter the value "{WheelDown 5}" in the parameter field
-  this will tell AHK to send a WheelDown event five times
+* Enter the value "{WheelDown 5}" in the parameter field.
+  This will tell AHK to send a WheelDown event five times each time you scroll down while holding Shift.
   <br/><br/>
 * Hit the "+" button to add another row and configure it the same as the first, except with WheelUp in place of the WheelDown's
   <br/>
