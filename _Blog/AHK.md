@@ -1,20 +1,20 @@
 ---
 layout: blog
 title: "AutoHotkey: What is it and why would I use it."
-summary: "AutoHotkey is a powerful scripting language. With it's powerful and simple syntax for key-binding and window management, it is a useful tool for any Windows user's tool belt."
+summary: "AutoHotkey is a powerful scripting language. With its powerful and simple syntax for key-binding and window management, it is a useful tool for any Windows user's tool belt."
 ---
 
 <link rel="stylesheet" href="/css/highlight/styles/darcula.css">
 <script src="/css/highlight/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
-AutoHotkey ([AHK](http://autohotkey.com){:target="_blank"}) is a powerful scripting language initially intended for the creation of macros and keyboard shortcuts. With it's powerful and simple syntax for key-binding and window management, it is a useful tool for any Windows user's tool belt.
+AutoHotkey ([AHK](http://autohotkey.com){:target="_blank"}) is a powerful scripting language initially intended for the creation of macros and keyboard shortcuts. With its powerful and simple syntax for key-binding and window management, it is a useful tool for any Windows user's tool belt.
 
 ## Background
 
 I was first introduced to [AHK](http://autohotkey.com){:target="_blank"} by a coworker ([John](https://github.com/thesloopjohnb){:target="_blank"}) in the summer of 2014. I had been on the search for a way to store lines of text I had to type frequently that was better than a text file and copy/paste. That summer, I acquired a barcode scanner for a project, but also experimented with using it for this as well (I printed off a sheet of bar codes containing lines of code I kept needing to add to the work I was doing). John mentioned AHK to me, and I tried it out. 
 
-I use it all the time now, with some shortcut scripts setup to run on startup, and the occasional "I need to do this thing real quick" when Python isn't the best option (For example, see my [Time Focuser](/projects/TimeFocuser.html) article).
+I use it all the time now, with some shortcut scripts setup to run on startup, and the occasional "I need to do this thing real quick" when Python isn't the best option (For example, see my [Time Focuser](/Projects/TimeFocuser.html) article).
 
 
 ## Overview of Syntax
@@ -76,27 +76,31 @@ This tool allows for a very quick editor for the most common basicu usages with 
 <br/><br/>
 ### Example 1: Typing the '&#162;' symbol
 
-Have you ever noticed how the 'Cents' symbol is never on your keyboard? Most of us have just learned to deal by typing "$0.05" instead of "5 &#162;" (Yes, I'm using html encoding for this blog post, but what I'm about to show you will work in any text editor that handles Unicode characters (which is just about everything except the basic Notepad). This is particularly useful when trying to make tidy/professional signs, flyers, or similar with prices in the cents range. 
+Have you ever noticed how the 'Cents' symbol is never on your keyboard? Most of us have just learned to deal by typing "$0.05" instead of "5 &#162;" - Yes, I'm using html encoding for this blog post, but what I'm about to show you will work in any text editor that handles Unicode characters (which is just about everything except the basic Notepad). This is particularly useful when trying to make tidy/professional signs, flyers, or similar with prices in the cents range. 
 <br/>
 However, realize that the following steps apply to most (if not all) unicode symbols, so if you find yourself needing to type check marks, smiling faces, or union symbols, head over to [fileformat.info](https://www.fileformat.info/info/unicode/){:target="_blank"} and look up the UTF-16 Hex value for whatever symbol you need to use in the steps below (although, I have found googling "unicode {symbol}" and selecting the [fileformat.info](https://www.fileformat.info/info/unicode/){:target="_blank"} link from the results to work better then using their search).
 
 * Open [AHKGen.com](http://www.ahkgen.com){:target="_blank"}
   * By default, we're given a single blank configuration to start with
-  
+  <br/>  
   ![AHKGen.com default page](ahkOverviewFiles/initialPage.png)
   <br/><br/>
 * Change the option to Hotstring
+  <br/>
   ![change the option to Hotstring](ahkOverviewFiles/hotstring.png)
   <br/><br/>
 * Set the 'string' field to "\`;cents" (the '`' tells AHK to escape the ';' - otherwise that would be the start of a comment)
   <br/><br/>
 * Select the SendUnicodeChar function from the drop down
+  <br/>
   ![change the option to Hotstring](ahkOverviewFiles/selectSendUnicode.png)
   <br/><br/>
 * Enter the value 0x00A2 in the parameter field
+  <br/>
   ![Set the Unichode parameter to "0x00A2"](ahkOverviewFiles/setSymbol.png)
   <br/><br/>
 * Hit "Submit!" to have your code generated
+  <br/>
   [![Result](ahkOverviewFiles/centsResult.png)](https://www.ahkgen.com/?length=1&comment0=&func0=STRING&skeyValue0=%3Bcents&input0=0x00A2&option0=SendUnicodeChar){:target="_blank"}
   <br/><br/>
 * You can now download your completed script, and if you have installed [AHK](http://autohotkey.com){:target="_blank"}, you can open it, go to a word doc (or something similar), and type ';cents' and watch it transform into a '&#162;' symbol.
@@ -117,12 +121,14 @@ Ever encounter a document or website where you wish your mouse scrolled a lot fa
   * Finally, WheelDown means "When the mouse wheel goes down a click"
   <br/><br/>
 * Select the Send function from the drop down
+  <br/>
   ![change the option to Hotstring](ahkOverviewFiles/selectSend.png)
   <br/><br/>
 * Enter the value "{WheelDown 5}" in the parameter field
   this will tell AHK to send a WheelDown event five times
   <br/><br/>
 * Hit the "+" button to add another row and configure it the same as the first, except with WheelUp in place of the WheelDown's
+  <br/>
   [![Finished](ahkOverviewFiles/shiftScrollFinished.png)](https://www.ahkgen.com/?length=2&comment0=&func0=KEY&skeyValue0=%24%2BWheelDown&input0=%7BWheelDown+5%7D&option0=Send&comment1=&func1=KEY&skeyValue1=%24%2BWheelUp&input1=%7BWheelUp+5%7D&option1=Send){:target="_blank"}
 * Hit "Submit!" to have your code generated
   <br/><br/>
@@ -136,6 +142,7 @@ Here's where the power of [AHK](http://autohotkey.com){:target="_blank"} really 
 There's a provided function for this on [AHKGen.com](http://www.ahkgen.com){:target="_blank"}, so we'll go ahead and use that to make Word come to the front if we hit CTRL + Alt + w.
 
 * Open [AHKGen.com](http://www.ahkgen.com){:target="_blank"}
+  <br/>
   ![AHKGen.com default page](ahkOverviewFiles/initialPage.png)
   <br/><br/>
 * Keep the Hotkey option
@@ -143,6 +150,7 @@ There's a provided function for this on [AHKGen.com](http://www.ahkgen.com){:tar
 * Set the 'key' field to "\`w" (notice the lower case, this is case sensitive) and select Control and Alt
   <br/><br/>
 * Select the ActivateOrOpen option
+  <br/>
   ![change the option to Hotstring](ahkOverviewFiles/activateOrOpen.png)
   <br/><br/>
 * This method has two parameters - the window to search for, and the program to open if not found.
@@ -150,6 +158,7 @@ There's a provided function for this on [AHKGen.com](http://www.ahkgen.com){:tar
   * Set the Program to "winword.exe"
   <br/><br/>
 * Hit "Submit!" to have your code generated
+  <br/>
   [![Finished](ahkOverviewFiles/winwordFinished.png)](https://www.ahkgen.com/?length=1&comment0=&func0=KEY&skey0%5B%5D=CTRL&skey0%5B%5D=ALT&skeyValue0=w&Window0=ahk_exe+winword.exe&Program0=winword.exe&option0=ActivateOrOpen){:target="_blank"}
   <br/><br/>
 * You can now download your completed script, run it, (close all Word windows) hit CTRL + Alt + w, and see it open. 
