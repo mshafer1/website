@@ -181,6 +181,14 @@ tags: Raspberry-Pi-0 Python Circuits Maker
     {% assign url="https://www.multisim.com/content/hGu5osguW4YqiW9e4sXkK8/high-current-led-driver/open" %}
     {% include circuitPreview.html %}
 
+
+    <p>
+        I realized after the fact that I should have used the silk screen to label the Vin, Control, Ground pins as well as the Collector, Emmitter, and Base pins on the transistor.
+    </p>
+    <div style="background-color: lightgray;">
+        <img src="sunriseAlarmFiles/labeledPCB.png" class="code"/>
+    </div>
+    
 </div>
 
 <div id="Rev4">
@@ -257,6 +265,29 @@ tags: Raspberry-Pi-0 Python Circuits Maker
     <p>Also moved all the unit tests under the  UnitTest folder and made a master run file.</p>
 </div>
 
+<div id="Rev6">
+    <h2>Rev 6: Hardware Rev - June 2019</h2>
+
+    <p>After my last post, <a href="https://disqus.com/by/thingiverse-e9114242212a4616e3641e105c961cea/" target="_blank">Nechoha</a> replied pointing out that I could use a different setup to limit the current from the  controller by moving the resistor before the </p>
+
+    {% include circuitPreview.html url="https://www.multisim.com/content/4xJH9gkLwJ7xAGeUmDeknP/simpler-npn-led-driver-circuit/open" %}
+
+    <p>I replied to them and said I would be making a rev in January to turn the circuit into a shield and would include this update at that point. Well, January came late this year.</p>
+
+    <p>I've made a new rev using this simplified circuit and turning it into a RasPI shield (I'm saying shield instead of HAT because I did not include in ID EEPROM).</p>
+
+    <p>
+        I published the shield template I had to make on 
+        <a href="https://github.com/mshafer1/rasPiShields" taget="_blank">GitHub</a>,
+         ordered my board from OshPark again (<a href="https://oshpark.com/shared_projects/Bz7aubzj" target="_blank">Sunrise Alarm RasPi0 Shield</a>),
+          and ordered a header from <a href="https://www.digikey.com/product-detail/en/adafruit-industries-llc/2223/1528-1385-ND/5629433" target="_blank">DigiKey</a>.
+    </p>
+
+    <p>I also learned from my last rev and included silk screen labeling on the Transistor arrangement and the resistor values (and power direction).</p>
+
+    <p>I've signed up to present this at a Maker fair coming up at the start of August, so I should have this assembled ahead of time and be able to post back by then, but given how long it took to get to this one, . . .</p>
+</div>
+
 <div id="Where">
     <h2>Where to get it:</h2>
 
@@ -268,19 +299,12 @@ tags: Raspberry-Pi-0 Python Circuits Maker
 </p>
 
 <p>
-    And here's where you can download my Gerber files (or order the board) on
-    <a target="_blank" href="https://oshpark.com/shared_projects/x42wQTAC">
-        Oshpark
-    </a>.
+    And here's where you can download my Gerber files (or order the board) on Oshpark
+    <ul>
+        <li><a target="_blank" href="https://oshpark.com/shared_projects/x42wQTAC">Rev 2 board</a></li>
+        <li><a target="_blank" href="https://oshpark.com/shared_projects/Bz7aubzj">Rev 6 board</a></li>
+    </ul>
 </p>
-
-
-<p>
-    I realized after the fact that I should have used the silk screen to label the Vin, Control, Ground pins as well as the Collector, Emmitter, and Base pins on the transistor.
-</p>
-<div style="background-color: lightgray;">
-    <img src="sunriseAlarmFiles/labeledPCB.png" class="code"/>
-</div>
 
 <p>I hope you find this useful.</p>
 </div>
