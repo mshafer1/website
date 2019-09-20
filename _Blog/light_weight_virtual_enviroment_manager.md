@@ -10,9 +10,9 @@ summary: A utility script for managing virtual env's
 Python Developers, ever wanted an easier way to create or activate multiple different virtual environments?
 This is something that has plagued me for sometime.
 
-One option that has been developed and works ok is [Anaconda](https://www.anaconda.com/distribution/){target=_blank}, but that does not work well with internal Pip packages or install packages from source.
+One option that has been developed and works ok is [Anaconda](https://www.anaconda.com/distribution/){:target=_blank}, but that does not work well with internal Pip packages or install packages from source.
 
-An alternative I came across a couple of months ago in a tutorial on setting up Django written by [DigitalOcean](https://m.do.co/c/e62a2722d8d4){target=_blank}, has you setup a test repo and a production repo and create an alias `workon` that takes a parameter for activating the correct virtual environment.
+An alternative I came across a couple of months ago in a tutorial on setting up Django written by [DigitalOcean](https://m.do.co/c/e62a2722d8d4){:target=_blank}, has you setup a test repo and a production repo and create an alias `workon` that takes a parameter for activating the correct virtual environment.
 
 Why not make `workon` able to make a venv?
 
