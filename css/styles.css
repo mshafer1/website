@@ -1,0 +1,17 @@
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+
+.white {
+    color: white;
+}
+
+.icon {
+    display: inline-block;
+    max-width: 100px;
+    height: auto;
+}

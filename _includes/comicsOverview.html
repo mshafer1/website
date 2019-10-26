@@ -1,0 +1,29 @@
+<section class="no-padding bg-secondary" id="comics">
+        <div class="row pt-2">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading white">Recent Comics:</h2>
+            </div>
+        </div>
+    <div class="container-fluid">
+        {% for post in site.Comics %}
+            {% assign startRow = forloop.index | modulo: 3 %}
+                
+            {% if startRow == 1 %}
+            <div class="row no-gutter">
+            {% endif %}
+                <!-- {{ startRow }}-->
+                <div class="col-lg-4 col-sm-6">
+                             <a href="{{post.permalink}}" class="btn btn-default btn-l">{{ post.title }}
+                                    {% comment %}<img src="{{post.permalink}}/{{ post.image }}" class="img-fluid" alt="{{post.title}}">{% endcomment %}
+                                </a>
+                </div>
+
+            {% if startRow == 0 %}
+            </div>
+            {% endif %}
+
+        {% endfor %}
+        
+    </div>
+    <div style="height: 10px;">&nbsp;</div>
+</section>

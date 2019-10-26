@@ -9,7 +9,7 @@
         </div>
         <div class="container">
             {% for post in site.Blog limit:5 %}
-                {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
+                {% capture thecycle %}{% cycle 'odd', 'test', 'test2', 'even' %}{% endcapture %}
                 {% if thecycle == 'odd' %}
                     <div class="row">
                 {% endif %}

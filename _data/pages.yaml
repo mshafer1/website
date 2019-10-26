@@ -5,6 +5,8 @@ list:
   url: "#blog"
 - title: Projects
   url: "#projects"
+- title: Comics
+  url: "#comics"
 - title: Contact
   url: contact
 - title: Support
