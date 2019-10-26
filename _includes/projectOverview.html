@@ -8,9 +8,9 @@
         {% for post in site.Projects %}
             {% assign startRow = forloop.index | modulo: 3 %}
                 
-            {% if startRow == 0 %}
+            {% if startRow == 1 %}
             <div class="row no-gutter">
-                {% endif %}
+            {% endif %}
 
                 <div class="col-lg-4 col-sm-6">
                     <a href="{{post.url}}" class="portfolio-box">
