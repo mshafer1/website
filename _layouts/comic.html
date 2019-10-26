@@ -1,0 +1,44 @@
+---
+layout: basic
+---
+
+
+<div style="height: 45px;"><!--padding-->&nbsp;</div>
+<div class="{{ page.background }}">
+    <div style="height: 5px;"><!--padding-->&nbsp;</div>
+    <div class="card span6 center-block m-4 {{ page.background }}">
+
+        <div class="card-body {{ page.border }}">
+
+            <div class="card-header center {{ page.foreground }}">
+                <h1>{{ page.title }}</h1>
+            </div>
+            <img src="{{ page.image }}" class="center {{ page.size }}" style="max-height: 50%;" alt="Loading . . ." title="{{ page.image_title }}"/>
+        </div>
+
+        <div class="card-footer span6 center">
+            <a href="{% if page.previous %}{{  page.previous.url }}{% else %}#{% endif %}" class="btn btn-primary {% unless page.previous %}disabled{% endunless %}">
+                <-
+            </a>
+            &nbsp;
+            <a href="{{ page.url }}" class="btn btn-primary">Permalink</a>
+            &nbsp;
+            <a href="{% if page.next %}{{  page.next.url }}{% else %}#{% endif %}" class="btn btn-primary {% unless page.next %}disabled{% endunless %}">
+                ->
+            </a>
+            {% if page.merch %}
+            <hr/>
+            <p class="{{ page.foreground }}">
+            Purchase it here!: <a href="{{ page.merch }}" target="_blank">
+            {% if page.merch_img %}
+                <img src="{{ page.merch_img }}" class="img-fluid icon" alt="Loading . . ." />
+            {% else %}
+                (click here)
+            {% endif %}
+                </a>
+            </p>
+
+            {% endif %}
+        </div>
+    </div>
+</div>

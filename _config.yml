@@ -17,6 +17,8 @@ collections:
     output: true
   Blog:
     output: true
+  Comics:
+    output: true
 
 # Build settings
 markdown: kramdown
