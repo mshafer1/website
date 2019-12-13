@@ -1,0 +1,53 @@
+---
+layout: none
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>{{ site.name | xml_escape }}</title>
+    <description>{{ site.description | xml_escape }}</description>
+    <link>{{ site.url }}</link>
+    <atom:link href="{{ site.url }}/rss/all.xml" rel="self" type="application/rss+xml" />
+
+    <!-- projects -->
+    {% for post in site.Projects limit:10 %}
+      <item>
+        <title>Project: {{ post.title | xml_escape }}</title>
+        <pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
+        <link>{{ site.url }}/{{ post.url }}</link>
+        <guid isPermaLink="true">{{ site.url }}/{{ post.url }}</guid>
+      </item>
+    {% endfor %}
+
+    <!-- comics -->
+    {% for post in site.Comics limit:10 %}
+      <item>
+        <title>Comic: {{ post.title | xml_escape }}</title>
+        <image>
+            <url>{{ site.url }}/{{ post.url }}/{{ post.image }}</url>
+            <title>{{ post.image_title | xml_escape }}</title>
+            <link>{{ site.url }}/{{ post.url }}</link>
+        </image>
+        <description>{{ post.image_title | xml_escape }}</description>
+        <pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
+        <guid isPermaLink="true">{{ site.url }}/{{ post.url }}</guid>
+      </item>
+    {% endfor %}
+
+    <!-- blog -->
+    {% for post in site.Blog limit:10 %}
+      <item>
+        <title>Post: {{ post.title | xml_escape }}</title>
+        <pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
+        <description>{{ post.summary | xml_escape }}</description>
+         <image>
+            <url>{{ site.url }}/{{ post.img }}</url>
+            <title>{{ post.title | xml_escape }}</title>
+            <link>{{ site.url }}/{{ post.url }}</link>
+        </image>
+        <link>{{ site.url }}/{{ post.url }}</link>
+        <guid isPermaLink="true">{{ site.url }}/{{ post.url }}</guid>
+      </item>
+    {% endfor %}
+  </channel>
+</rss>
