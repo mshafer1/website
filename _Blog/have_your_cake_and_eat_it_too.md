@@ -12,13 +12,13 @@ TOC:
 
 ## Background:
 
-[ahkgen.com](http://www.ahkgen.com){:target="_blank"} is a simple utility I wrote for making it easier for people wanting to get more done do so through [AutHotkey](http://www.autohotkey.com){:target="_blank"} without having to learn the entire language. When I wrote it originally I was not aware of JavaScript (JS) testing frameworks like [Jest](http://jestjs.io/){:target="_blank"}, but I needed a way to lighten the testing burden to make sure that adding new features didn't break old ones (This was the beginning of my journey to discover [Test Driven Development](https://www.guru99.com/test-driven-development.html){:target="_blank"}).
+[ahkgen.com](http://www.ahkgen.com){:target="_blank"} is a simple utility I wrote for making it easier for people wanting to get more done do so through [AutoHotkey](http://www.autohotkey.com){:target="_blank"} without having to learn the entire language. When I wrote it originally I was not aware of JavaScript (JS) testing frameworks like [Jest](http://jestjs.io/){:target="_blank"}, but I needed a way to lighten the testing burden to make sure that adding new features didn't break old ones (This was the beginning of my journey to discover [Test Driven Development](https://www.guru99.com/test-driven-development.html){:target="_blank"}).
 
 Since then, I have learned a lot. Some features I couldn't figure out for the original release I've had to figure out for other projects; I've been exposed to [Jest](http://jestjs.io/){:target="_blank"}; and I've learned a lot more about writing testable code. 
 
 Here in lies the problem: A lot of the code in the original setup isn't very testable (I had no reason to break up my functions in ways that made it easy to unit test - I "couldn't" unit test them anyways).
 
-I began refactoring the site anyways, but paused when I got to the point that I thought I had it working (before pushing it to the public host), to beef up the system level validation. If I could get automated tests running at the system level that verified the the behavior the user saw was unchanged, then I could be confident in my refactors.
+I began refactoring the site anyways, but paused when I got to the point that I thought I had it working (before pushing it to the public host), to beef up the system level validation. If I could get automated tests running at the system level that verified the the behavior the user saw was unchanged, then I could be confident in my re-factors.
 
 ## Why Travis-CI?
 
@@ -26,7 +26,7 @@ The site is already hosted in [GitHub Pages](https://pages.github.com/){:target=
 
 ## What's the complication?
 
-The site is built on [Jekyll](https://jekyllrb.com/docs/){:target="_blank"} (which serves as the backend to [GitHub Pages](https://help.github.com/en/github/working-with-github-pages/setting-up-a-github-pages-site-with-jekyll){:target="_blank"}) and takes advantage of some of the templating features available. <br/>
+The site is built on [Jekyll](https://jekyllrb.com/docs/){:target="_blank"} (which serves as the back-end to [GitHub Pages](https://help.github.com/en/github/working-with-github-pages/setting-up-a-github-pages-site-with-jekyll){:target="_blank"}) and takes advantage of some of the templating features available. <br/>
 This means that:
 * the source files that are stored aren't completely ready-to-serve HTML and JS (templating)
 * There is no server present already in the Travis-CI framework (Normally handled by GH-Pages serving the static output from Jekyll)
@@ -35,13 +35,13 @@ This means that:
 
 The objective was to setup a Travis-CI pipeline that would:
 * Build the site using Jekyll,
-* Use Jekylll's dev server to serve up the pages,
+* Use Jekyll's dev server to serve up the pages,
 * Load the pages through a headless browser (to actually run the JS)
 * And use Python with Selenium to load various pages and test that the UI reacts as expected.
 
 ## Why Write about it?
 
-I spent ~3 weeks digging through Travis-CI docs, Stack Overflow questions, and general Google searching to piece-meal this together. I'm documententing this in the hopes that it will help the next person to come along to develop good, automated, system level testing quicker.
+I spent ~3 weeks digging through Travis-CI docs, Stack Overflow questions, and general Google searching to piece-meal this together. I'm documenting this in the hopes that it will help the next person to come along to develop good, automated, system level testing quicker.
 
 ## Solution/Example
 
@@ -51,7 +51,7 @@ If you want to skip ahead and look at the resulting pipeline file, the current v
 
 ### Problem 1: Build the Jekyll site
 
-This is actually something I had done before, but in my search to get this  larger project setup, I came across a blog post by [mattouille.com](https://mattouille.com/articles/2017-10/testing-jekyll-with-travis-ci/){:target="_blank"} that not only built the site using jekyll, but used a ruby Gem called [htmlproofer](https://github.com/gjtorikian/html-proofer){:target="_blank"} to validate the links point to valid sites, images have alt tags, and similar. I chose to adopt this into my site as well to reduce the amount of testing I would have to write.
+This is actually something I had done before, but in my search to get this  larger project setup, I came across a blog post by [mattouille.com](https://mattouille.com/articles/2017-10/testing-jekyll-with-travis-ci/){:target="_blank"} that not only built the site using Jekyll, but used a ruby Gem called [htmlproofer](https://github.com/gjtorikian/html-proofer){:target="_blank"} to validate the links point to valid sites, images have alt tags, and similar. I chose to adopt this into my site as well to reduce the amount of testing I would have to write.
 
 [link to article](https://mattouille.com/articles/2017-10/testing-jekyll-with-travis-ci/){:target="_blank"}
 
@@ -89,7 +89,7 @@ after_success:
 
 Jekyll is required to build and serve the site, Python to test it.
 
-I eventually found this GitHub Issue to the Travis-CI project: https://github.com/travis-ci/travis-ci/issues/4090 - The jist of it is the OP wanted to have Python and Node.js available for running both the front and back ends of their site for testing purposes.
+I eventually found this GitHub Issue to the Travis-CI project: https://github.com/travis-ci/travis-ci/issues/4090 - The gist of it is the OP wanted to have Python and Node.js available for running both the front and back ends of their site for testing purposes.
 
 <b>The official answer was:</b> (Use `language: python` and install Node.js through the runtime [specifically nvm](https://github.com/travis-ci/travis-ci/issues/4090#issuecomment-122688955){:target="_blank"})
 
@@ -123,7 +123,7 @@ after_success:
 (at this point, the only test that would get picked up was a no-op. Just validation that the test runners were setup)
 
 
-### Problem 3: Getting Chrome and chromedriver installed
+### Problem 3: Getting Chrome and chrome driver installed
 
 For installing Chrome, I found the official Travis-CI docs has an article: [Google Chrome - Travis CI](https://docs.travis-ci.com/user/chrome){:target="_blank"}
 
@@ -163,7 +163,7 @@ after_success:
 
 ### Problem 4: Running the jekyll server AND pytest at the same time
 
-There are multiple ways of solving this, including launching a detached tmux, but I chose to go with just using bash's fork syntax (`&`) to avoid having one more thing to install and get setup.
+There are multiple ways of solving this, including launching a detached tmux, but I chose to go with just using Bash's fork syntax (`&`) to avoid having one more thing to install and get setup.
 
 I also added a 5 second sleep in after starting the server to allow it time to generate and get setup.
 
@@ -201,11 +201,11 @@ after_success:
 - npm run coveralls
 ```
 
-### Problem 5: Telling Pytest how to find the chrome-driver exe
+### Problem 5: Telling Pytest how to find the chrome-driver executable
 
 (This was actually something I had solved for other projects, but thought it was worth documenting here as well)
 
-Pytest actually allows you to customize the command line arguments it will take - this is particularly useful as it allows me to specify `~/bin/chomedriver` here, but something like `C:\chromedriver` on my dev machine.
+Pytest actually allows you to customize the command line arguments it will take - this is particularly useful as it allows me to specify `~/bin/chromedriver` here, but something like `C:\chromedriver` on my dev machine.
 
 To add args to pytest, author a [conftest](https://docs.pytest.org/en/2.7.3/plugins.html?highlight=conftest.py#conftest-py-plugins){:target="_blank"} and add the following method:
 
@@ -326,7 +326,7 @@ def browser(driver_path, use_headless):
 browser.result = None
 ```
 
-(Note: this also necessitated changing the psuedo-fixtures of `driver_path` and `use_headless` to session scoped as well by adding `scop="session"` to each of the parametrize calls)
+(Note: this also necessitated changing the pseudo-fixtures of `driver_path` and `use_headless` to session scoped as well by adding `scope="session"` to each of the parametrize calls)
 
 ## Summary
 
