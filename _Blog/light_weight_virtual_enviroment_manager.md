@@ -3,6 +3,7 @@ layout: blog
 title: Lightweight Python Virtual Env Manager
 img: workon_files/virtualenv.jpeg
 summary: A utility script for managing virtual env's
+date: 2019-09-17 21:00:00 -0500
 ---
 
 # Background

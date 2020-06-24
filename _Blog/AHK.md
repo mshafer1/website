@@ -2,6 +2,7 @@
 layout: blog
 title: "AutoHotkey: What is it and why would I use it."
 summary: "AutoHotkey is a powerful scripting language. With its powerful and simple syntax for key-binding and window management, it is a useful tool for any Windows user's tool belt."
+date: 2019-05-23 21:00:00 -0500
 ---
 
 <link rel="stylesheet" href="/css/highlight/styles/darcula.css">
