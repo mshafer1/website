@@ -12,9 +12,6 @@ I have found at times in my life that I spend way too much time on YouTube or re
 I chose to write a script using [AutoHotkey](http://www.autohotkey.com){:target="_blank"} to help me keep better track of my time.
 
 The basic concept is to use a `WinWaitActive` followed by a `WinWaitNotActive` with a timeout to start a timer when I open the page, but let the script continue once I've spent long enough on the page.
-<link rel="stylesheet" href="/css/highlight/styles/darcula.css">
-<script src="/css/highlight/highlight.pack.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
 <div>
 <pre>
 <code class="autohotkey">
