@@ -1,32 +1,33 @@
 <section id="blog">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Recent Posts:</h2>
-                    <hr class="primary">
-                </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">Recent Posts:</h2>
+                <hr class="primary">
             </div>
         </div>
-        <div class="container">
-            {% for post in site.Blog limit:5 %}
-                {% capture thecycle %}{% cycle 'odd', 'test', 'test2', 'even' %}{% endcapture %}
-                {% if thecycle == 'odd' %}
-                    <div class="row">
-                {% endif %}
-                    
-                        <div class="col-lg-3 col-md-6 text-center">
-                            <a href="{{post.url}}">
-                                <div class="service-box">
-                                    <h3>{{post.title}}</h3>
-                                    <p class="text-muted">{{post.summary}}</p>
-                                </div>
-                            </a>
-                        </div>
-                    
-                <!-- Need to close the div on the opposite group -->
-                {% if thecycle == 'even' %}
+    </div>
+    <div class="container">
+        {% assign sorted_blog_posts = (site.Blog | sort: 'date') | reverse %}
+        {% for post in sorted_blog_posts limit:8 %}
+        {% capture thecycle %}{% cycle 'odd', 'test', 'test2', 'even' %}{% endcapture %}
+        {% if thecycle == 'odd' %}
+        <div class="row">
+            {% endif %}
+
+            <div class="col-lg-3 col-md-6 text-center">
+                <a href="{{post.url}}">
+                    <div class="service-box">
+                        <h3>{{post.title}}</h3>
+                        <p class="text-muted">{{post.summary}}</p>
                     </div>
-                {% endif %}
-            {% endfor %}
+                </a>
+            </div>
+
+            <!-- Need to close the div on the opposite group -->
+            {% if thecycle == 'even' %}
         </div>
-    </section>
+        {% endif %}
+        {% endfor %}
+    </div>
+</section>
