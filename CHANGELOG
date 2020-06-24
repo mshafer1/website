@@ -1,3 +1,4 @@
 Tue, Jun 23, 2020  8:16:23 PM -- document travis with jekyll + pytest
 Tue, Jun 23, 2020  8:25:29 PM -- reverse blog posts on home page
 Tue, Jun 23, 2020  8:34:43 PM -- update link to point at preview->master
+Tue, Jun 23, 2020  8:52:50 PM -- run spell check
