@@ -2,6 +2,7 @@
 layout: blog
 title: "Google Drive: A Simple option for hosting high resolution photos for your website"
 summary: "Lot's of free hosting website tools drastically decrease the resolution of images you upload to them, but with Google Drive you can get the full resolution version into your site."
+date: 2020-05-23 21:00:00 -0500
 ---
 
 * foo

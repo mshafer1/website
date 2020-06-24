@@ -3,6 +3,7 @@ layout: blog
 title: Super Lightweight Static Web Server
 img: flaskFiles/logo.png
 summary: A quick and dirty python script to serve up it's current directory as a webserver through Flask
+date: 2019-05-21 21:00:00 -0500
 ---
 
 # Background
