@@ -2,7 +2,7 @@
 layout: blog
 title: "Have your cake and eat it too: How to get Travis-CI to build your Jekyll site AND run tests on it through Python with Selenium"
 summary: "I run a website (ahkgen.com) for which I wrote Python Selenium based system tests. Coming back to this project, I decided it was time to get these tests running in Travis-CI."
-result_file: https://github.com/mshafer1/preview-ahk-gen/blob/master/.travis.yml
+result_file: https://github.com/mshafer1/AHK-generator/blob/master/.travis.yml
 date: 2020-06-23 19:30:00 -0500
 ---
 
@@ -45,7 +45,7 @@ I spent ~3 weeks digging through Travis-CI docs, Stack Overflow questions, and g
 
 ## Solution/Example
 
-If you want to skip ahead and look at the resulting pipeline file, the current version can be found [here]({{page.result_file}}){:target="_blank"} (<b>Note:</b> This link will likely change over time as I work to integrate this refactoring into the main project, I will try to remember to come back and update it here when I do. If I forgot, checkout the master branch of the [main repo](https://github.com/mshafer1/AHK-generator){:target="_blank"}).
+If you want to skip ahead and look at the resulting pipeline file, the current version can be found [here]({{page.result_file}}){:target="_blank"}.
 
 ## Steps In overcoming
 
