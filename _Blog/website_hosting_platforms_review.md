@@ -173,4 +173,5 @@ But (at least at that time), Hosting24 did not support Python hosting, so I aske
 | Allows for user accounts                                             |              |         |              |         | ✓         |          | ✓         | ✓            | ✓             |
 | High up time guarantee                                               |              | ✓       |  ✓          | ✓       | ✓         | ✓        | ✓         |              | ✓             |
 | Customizable back-end (database, logging, doing server side scripts) |              |         |              |         |           |          | ✓         | ✓            | ✓             |
+| Cost estimate (based on what I was paying)<br/>* if paying anually   |              | -       | -            | -       | -         | -        | $20/month* | -            | $6/month      |
 {: .table}
