@@ -100,7 +100,7 @@ Note: by this point, the projects I had undertaken that needed databases, were d
 
 Throughout most of this, I've had a server setup in my living room running Apache2, and IIS on my Windows machine for dev testing. In preparation for our wedding in 2017, I built (using examples and PHP) a site that allowed visitors to upload image files. I setup the server so these were stored on a thumb drive, and during the wedding - told anyone I saw taking pictures on their phone, to just upload them there. (a few used this option).
 
-Since then, I have used the fact that I have
+Since then, I have used the fact that I have this server setup to do testing and throw up quick one-pages (like a web ui for my [sunrise alarm clock](/Projects/SunriseAlarmClock.html) or a stats sheet for my D&amp;D character).
 
 ### 2017: Exposure to Wix.com
 
