@@ -172,8 +172,8 @@ def test__first_grade_add__negative_numbers__raises():
 
 You can tell pytest to always run with coverage for your module/project (or a specific module/folder) in your pytest configuration. (if using `pyproject.toml`, it might look like this):
 ```toml
-[tool:pytest]
-adopts = "--cov=. --cov-report html" 
+[tool.pytest.ini_options]
+addopts = "--cov=. --cov-report html" 
 ```
 This tells pytest to run coverage on the working directory and generate an html report. (lots of options available, [read the docs](https://readthedocs.org/projects/pytest-cov/en/latest))
 
