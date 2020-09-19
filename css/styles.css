@@ -23,3 +23,10 @@ ul.checked_list li:before {
     content: "✓";
     padding-right: 1ch;
 }
+
+blockquote {
+    padding-left: 5px;
+    background-color: rgb(179, 179, 179);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: black
+}
