@@ -302,6 +302,8 @@ There are ways to do it - but they they're generally either ugly or involve havi
 
 [`freezegun`](https://github.com/spulec/freezegun) Takes all that away and provides a clean interface for mocking what date and time it is for your tests.
 
+It also has a pytest plugin to expose the option as a fixture in pytests: [`pytest-freezegun`](https://pypi.org/project/pytest-freezegun/)
+
 
 ## Books:
 Some books that helped me to learn these lessons (on the software engineering and importance of tests side of things) include:
