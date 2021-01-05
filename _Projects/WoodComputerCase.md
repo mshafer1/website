@@ -8,6 +8,8 @@ tags: Maker Woodworking Computers
 
 Complete part list at end of article: [Complete parts list](#complete-parts-list-including-wood-glues-case-io-etc)
 
+![finished outcome](woodComputerCaseFiles/finished.JPG){:.img-fluid}
+
 ## Background
 My wife and I started spending some of our leisure time playing computer games together (co-op mode). However, the laptop we were using was not purchased with gaming in mind, so we went cheap and got equipment that can run Chrome and office and a few other things fine, but not really keep up well with even a light game.
 
