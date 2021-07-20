@@ -13,7 +13,16 @@ layout: basic
             <div class="card-header center {{ page.foreground }}">
                 <h1>{{ page.title }}</h1>
             </div>
+			{% capture _svg_extension %}{{'.svg'}}{% endcapture %}
+			{% assign _extension_size = _svg_extension | size %}
+			{% assign _path_size = page.image | size %}
+			{% assign start_index = _path_size | minus: _extension_size %}
+			{% assign result = page.image | slice: start_index, _extension_size %}
+            {% if result == _svg_extension %}
+            {% include_relative {{ page.image }} %}
+            {% else %}
             <img src="{{ page.image }}" class="center {{ page.size }} img-fluid" style="max-height: 50%;" alt="Loading . . ." title="{{ page.image_title }}"/>
+			{% endif %}
         </div>
 
         <div class="card-footer span6 center">
