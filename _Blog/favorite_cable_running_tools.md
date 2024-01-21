@@ -11,6 +11,7 @@ date: 2024-01-20 21:00:00 -0500
 
 Whether my church needs a new cable run or I'm working on setting up my house to have easy access to wired internet, these are the tools I have found useful to make the process of running cables easier.
 
+{:class="table"}
 | Tool | Price I paid* | Why it's useful |
 | --- | --- | --- |
 | [Ethernet cable tester + identifier + tone generator](https://www.amazon.com/gp/product/B085LPN71C) (VDV501-851) | $89.97 | This cable tester allows me to put the node in one room and go to another to validate that both sides are punched correctly. This model will show me which pairs are swapped if incorrect, but also has the ability to send out a tone signal on several different pairs (which I've used to check whether an old punch was A or B). |
