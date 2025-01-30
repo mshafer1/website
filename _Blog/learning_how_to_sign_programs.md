@@ -8,6 +8,13 @@ date: 2025-01-29 21:00:00 -0500
 
 # Background
 
+I'm a Software Developer. I write tools to solve problems. I've thought about "what if someone takes a tool I put on the internet changes it to inject a virus, then passes it off as my original?".
+At the same time, Windows is trying harder and harder to make running un-trusted code difficult (and with good reason).
+
+These two factors sent me down the rabbit trail of "ok, digitally signing would make it clear if my program was changed, but how do I sign something and how do I make it so that Windows can be told to trust things that I've signed?"
+
+Below is a recap of the "how" that I learned:
+
 # Step 0: Setting up your own root CA.
 
 You can *technically* skip this step, but having a certificate that you use to sign the other certs allows you to just distribute this cert and ask users to install it as trusted (on the basis that they trust you - see section below [What does installing a root certificate mean?](#what-does-installing-a-root-certificate-mean)).
