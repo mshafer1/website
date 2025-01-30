@@ -68,7 +68,7 @@ It means that you trust the author/holder of the cert to:
 
 &#9888;&#x26A0; ONLY install root certificates from individuals or companies that you know and trust. &#9888;&#x26A0;
 
-As such, by making a root cert (certificate authority) yourself, you are saying to anyone you share this cert with that you will do 1 & 2 so that they their trust in you (manifested by installing your cert as a root CA) is no misplaced.
+As such, by making a root cert (certificate authority) yourself, you are saying to anyone you share this cert with that you will do 1 & 2 so that their trust in you (manifested by installing your cert as a root CA) is not misplaced.
 
 
 # Part 1: Signing VBA files
