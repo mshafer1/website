@@ -103,10 +103,12 @@ $cert = New-SelfSignedCertificate @certParams
 ```
 
 1. Open the vba editor (edit the macro)
-1. Select tools "tools" menu
-1. Select "Digitial Signature" under that menu
-1. In the dialogue that pop up, under "Sing as", click on "Choose"
+1. Select "tools" menu
+1. Select "Digital Signature" under that menu
+1. In the dialogue that pops up, under "Sign as", click on "Choose"
+  
   ![Select Choose](signProgramFiles/01_select_certificate.png){:.img-fluid}
+
 1. In the window that pops up after, select the certificate that you wish to use
 1. Save and close the editor.
 
