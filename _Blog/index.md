@@ -5,7 +5,7 @@ title: Blog
 
 <div class="container">
         {% assign sorted_blog_posts = (site.Blog | sort: 'date') | reverse %}
-        {% for post in sorted_blog_posts %}{% if post.date %}
+        {% for post in sorted_blog_posts %}{% if post.summary %}
         {% capture thecycle %}{% cycle 'odd', 'test', 'test2', 'even' %}{% endcapture %}
         {% if thecycle == 'odd' %}
         <div class="row">

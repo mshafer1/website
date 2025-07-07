@@ -9,7 +9,7 @@
     </div>
     <div class="container">
         {% assign sorted_blog_posts = (site.Blog | sort: 'date') | reverse %}
-        {% for post in sorted_blog_posts limit:8 %}
+        {% for post in sorted_blog_posts limit:8 %}{% if post.summary %}
         {% capture thecycle %}{% cycle 'odd', 'test', 'test2', 'even' %}{% endcapture %}
         {% if thecycle == 'odd' %}
         <div class="row">
@@ -28,7 +28,7 @@
             {% if thecycle == 'even' %}
         </div>
         {% endif %}
-        {% endfor %}
+        {% endif %}{% endfor %}
     </div>
 
     <div class="container">
