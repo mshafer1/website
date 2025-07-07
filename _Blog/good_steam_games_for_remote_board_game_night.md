@@ -1,16 +1,25 @@
 ---
 layout: blog
-title: "A look at some of hte games my family has enjoyed playing with friends over a video call."
+title: "Steam Games for Video-Call Game Night."
 summary: "Want to play Steam games with friends? Here's a list of ones that my family found works well for our friend group."
 result_file: https://github.com/mshafer1/AHK-generator/blob/master/.travis.yml
 date: 2025-07-06 20:00:00 -0500
 ---
 
+<br/>
+
+## Notes:
+
 \*All prices are as-of the time of writing. Steam constantly changes prices, so takes these as ball-park.
+
+<br/>
 
 I have noticed that there is a theme to this list -> all the games are either puzzle based, or some take on a "party" game. I guess that's the types of game-nights we like to setup 🙂
 
+## Some of our favorite Steam games for a video-call game night with friends
+
 1. Escape Simulator (\* $10 + DLC)
+
     [store.steampowered.com](https://store.steampowered.com/app/1435790/Escape_Simulator/)
     
     We like escape rooms, and we have found the original rooms and a lot of the community rooms that have played to be good/fun. This seems to work well for 2-4 people (4 can be crowded depending on the "room").
@@ -19,7 +28,7 @@ I have noticed that there is a theme to this list -> all the games are either pu
 
     There is a version 2 that is coming out, we have not had the opportunity to explore it yet.
 
-1. Among Us (\* $3)
+2. Among Us (\* $3)
 
     [store.steampowered.com](https://store.steampowered.com/app/945360/Among_Us/)
     
@@ -33,7 +42,7 @@ I have noticed that there is a theme to this list -> all the games are either pu
     We do keep count of whether the traitor or the crewmates are winning more often (and adjust the number of tasks to try to keep it fairly even).
     (We have decided that some of the sabotage methods are over-powered when playing this way...)
 
-2. Wing Span (\* $8)
+3. Wing Span (\* $8)
 
     [store.steampowered.com](https://store.steampowered.com/app/1054490/Wingspan/)
 
@@ -41,13 +50,13 @@ I have noticed that there is a theme to this list -> all the games are either pu
     
     All players must own the base game; but, if any player has an expansion, the cards (birds) from the expansion can be used.
 
-3. Dominion (\* $0 + DLC)
+4. Dominion (\* $0 + DLC)
 
     [store.steampowered.com](https://store.steampowered.com/app/1131620/Dominion/)
 
     We learned to play the board game first, and decided to check out the Steam version as a way to play with friends that don't live close / against bots when we're not all free. The base game is no cost, and if any player has expansions (DLC), they can be used in a game. There are several ways to play this game online / on-computer, but we like the Steam interface and its automatic counting and progression if there isn't a choice to make.
 
-4. Jackbox Party Pack 3 (\* $15)
+5. Jackbox Party Pack 3 (\* $15)
 
     [store.steampowered.com](https://store.steampowered.com/app/434170/The_Jackbox_Party_Pack_3/)
 
