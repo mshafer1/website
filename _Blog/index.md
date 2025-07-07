@@ -1,3 +1,8 @@
+---
+layout: dark-basic
+title: Blog
+---
+
 <div class="container">
         {% assign sorted_blog_posts = (site.Blog | sort: 'date') | reverse %}
         {% for post in sorted_blog_posts %}
