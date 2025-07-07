@@ -5,7 +5,7 @@ title: Blog
 
 <div class="container">
         {% assign sorted_blog_posts = (site.Blog | sort: 'date') | reverse %}
-        {% for post in sorted_blog_posts %}
+        {% for post in sorted_blog_posts %}{% if post.date %}
         {% capture thecycle %}{% cycle 'odd', 'test', 'test2', 'even' %}{% endcapture %}
         {% if thecycle == 'odd' %}
         <div class="row">
@@ -15,6 +15,7 @@ title: Blog
                 <a href="{{post.url}}">
                     <div class="service-box">
                         <h3>{{post.title}}</h3>
+                        <p class="text-muted">({{ post.date }})</p>
                         <p class="text-muted">{{post.summary}}</p>
                     </div>
                 </a>
@@ -24,5 +25,6 @@ title: Blog
             {% if thecycle == 'even' %}
         </div>
         {% endif %}
-        {% endfor %}
+        {% endif %}{% endfor %}
     </div>
+
