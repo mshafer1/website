@@ -76,7 +76,7 @@ The whole point of RAID is make your data more resilient to drive failures (i.e.
 
 Let's work through an example, let's say I have an important file and I WILL have a drive/storage-device die in the next year.
 
-<table>
+<table class="table">
 <thead>
 <tr>
     <th colspan="3">File storage locations</th>
@@ -94,7 +94,7 @@ Let's work through an example, let's say I have an important file and I WILL hav
 </table>
 100% file loss...
 
-<table>
+<table class="table">
 <thead>
 <tr>
     <th colspan="3">File storage locations</th>
@@ -125,7 +125,7 @@ What do I mean by "Data at risk"?
 
 What if we have two external copies?
 
-<table>
+<table class="table">
 <thead>
 <tr>
     <th colspan="3">File storage locations</th>
@@ -158,6 +158,7 @@ Here, with every possible occurrence of 1 drive failing, the data is still fine 
 
 Now, let's look at RAID. To keep things simple, I will only discuss the following RAID types:
 
+{:class="table"}
 | Name | Description | Minimum # of drives |
 | ---- | ----------- | ------------------- |
 | RAID-0 | aka, "Extended", all data shared, there is no redundancy (named "0" because it is a "non-raid") | 2 |
@@ -175,7 +176,7 @@ What do I mean by "Parity data"?
 > Extra bytes that reflect the original data. Often used to detect a problem in 
 > storage/retrieval or transmission. Many RAID setups use it to be able to reconstruct lost data. 
 
-<table>
+<table class="table">
 <thead>
 <tr>
     <th colspan="3">Raid 0 - no redundancy</th>
@@ -203,7 +204,7 @@ What do I mean by "Parity data"?
 
 
 
-<table>
+<table class="table">
 <thead>
 <tr>
     <th colspan="3">Raid 1 - purely redundant</th>
