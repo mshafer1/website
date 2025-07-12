@@ -106,13 +106,13 @@ Let's work through an example, let's say I have an important file and I WILL hav
     <td>🔥 My Computer</td>
     <td>External Drive 1</td>
     <td>&nbsp;</td>
-    <td>Data <b>at risk<b></td>
+    <td>Data <b>at risk</b></td>
 </tr>
 <tr>
     <td>My Computer</td>
     <td>🔥 External Drive 1</td>
     <td>&nbsp;</td>
-    <td>Data <b>at risk<b></td>
+    <td>Data <b>at risk</b></td>
 </tr>
 </tbody>
 </table>
