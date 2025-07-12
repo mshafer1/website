@@ -45,7 +45,7 @@ People in tech/cyber-security are divided on whether you can rely on "cloud" bac
 - (+) Under a paid plan, the company should be guaranteeing your data 
 - (+) It's simple, and is off-site
 - (-) The company will be a target for hacking attacks (any big name is going to be a target because they possess a massive number of people’s data)
-- (-) What if your (individual) account is hacked amd deleted (or you forget the password or otherwise lose access)?
+- (-) What if your (individual) account is hacked and deleted (or you forget the password or otherwise lose access)?
 
 Personally, I use online backups for a lot of things, but I’m wary of using them to store important documents that contain personal data AND that I’m required to keep (pronounced: tax documents). 
 
