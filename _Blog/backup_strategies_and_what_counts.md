@@ -3,7 +3,7 @@ layout: blog
 title: "Backups: what counts?"
 summary: >
     Why do I want 3-2-1? Does a RAID count?
-date: 2025-07-11 21:00:00 -0500
+date: 2025-07-11 20:00:00 -0500
 ---
 
 * foo
