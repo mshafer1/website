@@ -6,6 +6,17 @@ summary: A quick and dirty python script to serve up it's current directory as a
 date: 2019-05-21 21:00:00 -0500
 ---
 
+# Update 2025
+
+Over the last couple of years, I've learned that Python has a folder and file http server built in.
+This entire process is replaced by:
+
+`python3 -m http.server`
+
+To open an http server on port 8000 serving the current cwd.
+
+You can even override the direct, the bind address, and/or the port if needed. See `python3 -m http.server --help` for details.
+
 # Background
 
 There have been a couple of times when I wanted to just quickly pull up a directory as a web site and check that I had the files laid out correctly before pushing them to the main server.
