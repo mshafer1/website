@@ -1,8 +1,7 @@
 ---
 layout: blog
 title: "Backups: what counts?"
-summary: >
-    Why do I want 3-2-1? Does a RAID count?
+summary: Why do I want 3-2-1? Does a RAID count?
 date: 2025-07-11 20:00:00 -0500
 ---
 
@@ -45,7 +44,7 @@ People in tech/cyber-security are divided on whether you can rely on "cloud" bac
 - (+) Under a paid plan, the company should be guaranteeing your data 
 - (+) It's simple, and is off-site
 - (-) The company will be a target for hacking attacks (any big name is going to be a target because they possess a massive number of people’s data)
-- (-) What if your (individual) account is hacked and deleted (or you forget the password or otherwise lose access)?
+- (-) What if your (individual) account is hacked and deleted (or you forget the password or otherwise lose access)? (at best, you can work with the customer support to regain access or possibly get the file restored, but that will likely take weeks or not happen)
 
 Personally, I use online backups for a lot of things, but I’m wary of using them to store important documents that contain personal data AND that I’m required to keep (pronounced: tax documents). 
 
@@ -55,9 +54,9 @@ You may be familiar with the line:
 
 > RAID is not a backup.
 
-I have found that there are two types of people who say this: those who understand why, and those who’ve just heard it and repeat it as gospel-truth. 
+I have found that there are two types of people who say this: those who understand why, and those who’ve just heard it and repeat it as unquestionable-truth. 
 
-I’m not going to address the latter here. (I need arguments to reason with).
+I’m not going to address the latter here. (I need arguments to reason with...).
 
 To summarize the arguments for this statement [[reference](https://www.raidisnotabackup.com/)]
 
@@ -154,14 +153,14 @@ What if we have two external copies?
 </tbody>
 </table>
 
-Here, with every possible occurrence of 1 drive failing, the data is still fine (and exists on two copies).
+Here, with every possible occurrence of 1 drive failing, the data is still fine (and exists as two copies on separate devices).
 
 Now, let's look at RAID. To keep things simple, I will only discuss the following RAID types:
 
 {:class="table"}
 | Name | Description | Minimum # of drives |
 | ---- | ----------- | ------------------- |
-| RAID-0 | aka, "Extended", all data shared, there is no redundancy (named "0" because it is a "non-raid") | 2 |
+| RAID-0 | aka, "Extended", all data shared, there is no redundancy (named "0" because it is not redundant thus a "non-raid") | 2 |
 | RAID-1 | aka, "Mirrored", The data is duplicated on two drives (can have more then two, but each file is present on 2) | 2 |
 | RAID-5 | Data + Parity data is distributed across all drives. | 3 |
 | RAID-Z1 | 1 drive is dedicated to Parity data for the other drives | 2 |
@@ -228,7 +227,7 @@ What do I mean by "Parity data"?
 </tbody>
 </table>
 
-Here, there’s a 100% chance that the files are fine, as long as I then take action to make more copies and/or repair the RAID array by replacing the failed drive. 
+Here, there’s a 100% chance that the files are fine, as long as you then take action to make more copies and/or repair the RAID array by replacing the failed drive. 
 
 The story is actually the same for RAID-5, and RAID-Z1: when a single drive dies, the data is <b>at risk</b> (not lost).
 
