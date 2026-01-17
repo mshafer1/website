@@ -7,9 +7,6 @@ date: 2020-09-18 21:00:00 -0500
 
 <b>Note: these are not in a particular order, but is a list top N list of useful tricks.</b>
 
-* foo
-{:toc}
-
 For the duration of this document, the distinction between "unit", "system", and "integration" tests is not made - these rules and tips apply to all.
 
 ### 1. Do it.

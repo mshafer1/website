@@ -6,9 +6,6 @@ summary: >
 date: 2025-07-11 20:00:00 -0500
 ---
 
-* foo
-{:toc}
-
 ## What is 3-2-1 in backups?
 
 Let's work through a scenario:

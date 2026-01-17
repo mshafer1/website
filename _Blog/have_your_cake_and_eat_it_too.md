@@ -6,10 +6,6 @@ result_file: https://github.com/mshafer1/AHK-generator/blob/master/.travis.yml
 date: 2020-06-23 19:30:00 -0500
 ---
 
-TOC:
-* foo
-{:toc}
-
 ## Background:
 
 [ahkgen.com](http://www.ahkgen.com){:target="_blank"} is a simple utility I wrote for making it easier for people wanting to get more done do so through [AutoHotkey](http://www.autohotkey.com){:target="_blank"} without having to learn the entire language. When I wrote it originally I was not aware of JavaScript (JS) testing frameworks like [Jest](http://jestjs.io/){:target="_blank"}, but I needed a way to lighten the testing burden to make sure that adding new features didn't break old ones (This was the beginning of my journey to discover [Test Driven Development](https://www.guru99.com/test-driven-development.html){:target="_blank"}).

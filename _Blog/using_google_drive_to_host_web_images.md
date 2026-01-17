@@ -5,9 +5,6 @@ summary: "Lot's of free hosting website tools drastically decrease the resolutio
 date: 2020-05-23 21:00:00 -0500
 ---
 
-* foo
-{:toc}
-
 ## Background:
 
 Several years ago, I was just getting started on web development and learned how to host a static web site on Google Drive at no extra cost. This feature has been removed, but Google Drive still lets you upload your full resolution photos (and with a little know-how) you can get your website builder to pull it in.
