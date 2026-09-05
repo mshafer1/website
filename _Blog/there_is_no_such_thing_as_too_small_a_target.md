@@ -5,6 +5,7 @@ summary: |
   Wait, why are people attacking my website?
   How I learned that vulnerabilities and hacking are not usually personal.
 date: 2026-01-17 19:00:00 -0500
+tags: Security
 ---
 
 * foo

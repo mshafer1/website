@@ -3,6 +3,7 @@ layout: blog
 title: 'Signing Programs: Digitally saying "I wrote this".'
 summary: Publishing code/software always comes with the question of "But what if someone take a copy, maliciously alters it, then passes it off as from me". Also, Windows is starting to get really annoying about untrusted code. Let's learn how to solve this.
 date: 2025-01-29 21:00:00 -0500
+tags: Programming
 ---
 
 

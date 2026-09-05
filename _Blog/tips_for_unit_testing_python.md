@@ -3,6 +3,7 @@ layout: blog
 title: Tips for testing in Python
 summary: Want to write better Python tests? Here's a set of tips and tricks I've picked up over the years.
 date: 2020-09-18 21:00:00 -0500
+tags: Programming
 ---
 
 <b>Note: these are not in a particular order, but is a list top N list of useful tricks.</b>
