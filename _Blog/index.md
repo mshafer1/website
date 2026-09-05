@@ -3,10 +3,10 @@ layout: dark-basic
 title: Blog
 ---
 
-<link href="https://cdn.jsdelivr.net/gh/mshafer1/quick-filter-table@1.0.1/quick-filter-table/dist/quick-filter-table.css"
+<link href="https://cdn.jsdelivr.net/gh/mshafer1/quick-filter-table@1.1.6/quick-filter-table/dist/quick-filter-table.css"
     rel="stylesheet" />
 <script
-    src="https://cdn.jsdelivr.net/gh/mshafer1/quick-filter-table@1.0.1/quick-filter-table/dist/quick-filter-table.js"></script>
+    src="https://cdn.jsdelivr.net/gh/mshafer1/quick-filter-table@1.1.6/quick-filter-table/dist/quick-filter-table.js"></script>
 
 
 <div id="table" class="container"></div>
