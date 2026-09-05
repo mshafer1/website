@@ -21,6 +21,7 @@ title: Blog
                 <a href="{{post.url}}">
                     <div class="service-box">
                         <h3>{{post.title}}</h3>
+                        <p class="d-none">{{ post.tags | default("") }}</p>
                         <p class="text-muted">({{ post.date }})</p>
                         <p class="text-muted">{{post.summary}}</p>
                     </div>
