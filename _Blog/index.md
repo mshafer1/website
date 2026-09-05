@@ -17,7 +17,7 @@ title: Blog
           items: [
             {% assign sorted_blog_posts = site.Blog | sort: 'date' | reverse %}
         {% for post in sorted_blog_posts %}{% if post.summary %}
-            {{ 'render': {{ `<div class="row">
+            { 'render': `<div class="row">
                 <a href="{{post.url}}">
                     <div class="service-box">
                         <h3>{{post.title}}</h3>
@@ -25,12 +25,11 @@ title: Blog
                         <p class="text-muted">{{post.summary}}</p>
                     </div>
                 </a>
-            </div>` }} }}
+            </div>` },{% endif %}
         {% endfor %}
           ],
           headers: [
             { text: "", value: "render", html: true },
           ],
         });
-      }
 </script>
