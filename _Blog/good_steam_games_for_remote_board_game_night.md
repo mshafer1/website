@@ -4,6 +4,7 @@ title: "Steam Games for Video-Call Game Night."
 summary: "Want to play Steam games with friends? Here's a list of ones that my family found works well for our friend group."
 result_file: https://github.com/mshafer1/AHK-generator/blob/master/.travis.yml
 date: 2025-07-06 20:00:00 -0500
+tags: Games
 ---
 
 <br/>

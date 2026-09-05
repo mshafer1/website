@@ -4,6 +4,7 @@ title: "TIL: How to set Micro text editor to apply a filetype for a particular f
 summary: >
     Turns out it's pretty easy to tell Micro text editor to treat a particular file as yaml (or other syntax)
 date: 2026-01-17 8:00:00 -0500
+tags: Tools
 ---
 
 # Background

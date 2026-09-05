@@ -3,6 +3,7 @@ layout: blog
 title: "Cable Running: My favorite tools."
 summary: "Every now and then, I need to run an Ethernet cable or something in/through the walls. These are the tools I have found useful for this."
 date: 2024-01-20 21:00:00 -0500
+tag: Tools
 ---
 
 

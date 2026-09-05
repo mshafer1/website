@@ -3,6 +3,7 @@ layout: blog
 title: "Website Hosting: A review of different options"
 summary: "So you want to make a website. What type of hosting options is best for you?"
 date: 2020-08-27 21:00:00 -0500
+tags: Web-dev
 ---
 
 <style>

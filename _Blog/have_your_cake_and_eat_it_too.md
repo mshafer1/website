@@ -4,6 +4,7 @@ title: "Have your cake and eat it too: How to get Travis-CI to build your Jekyll
 summary: "I run a website (ahkgen.com) for which I wrote Python Selenium based system tests. Coming back to this project, I decided it was time to get these tests running in Travis-CI."
 result_file: https://github.com/mshafer1/AHK-generator/blob/master/.travis.yml
 date: 2020-06-23 19:30:00 -0500
+tags: Web-dev Programming
 ---
 
 TOC:

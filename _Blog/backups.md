@@ -4,6 +4,7 @@ title: Making Backups
 img: backupFiles/logo.jpg
 summary: Are backups important? How can I make them without a hassle?
 date: 2018-06-23 21:00:00 -0500
+tags: Backups
 ---
 
 ## Why Bother?
