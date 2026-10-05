@@ -1,7 +1,6 @@
 ---
 layout: blog
 title: Running Alpine (AARCH64) on Proxmox
-img: img/aarch64_plus_proxmox.png
 summary: I want to use a VM to develop an image for a Raspberry Pi, how hard can it be?
 date: 2026-10-04 20:00:00 -0500
 tags: VM Proxmox Alpine
